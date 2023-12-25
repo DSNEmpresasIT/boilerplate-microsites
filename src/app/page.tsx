@@ -46,7 +46,7 @@ export default function Index() {
           <div className="grid md:grid-cols-12 grid-cols-1 items-center mt-10 gap-[30px]">
             <div className="md:col-span-7">
               <div className="me-6">
-                <h4 className="font-semibold lg:leading-normal leading-normal text-4xl lg:text-5xl mb-5 text-black dark:text-white">Our Creativity Is Your <span className="text-indigo-600">Success</span></h4>
+                <h4 className="font-semibold lg:leading-normal leading-normal text-4xl lg:text-5xl mb-5 text-black dark:text-white">Our Creativity Is Your <span className="text-sexocolor">Success</span></h4>
                 <p className="text-slate-400 text-lg max-w-xl">Launch your campaign and benefit from our expertise on designing and managing conversion centered Tailwind CSS v3.x html page.</p>
 
                 <div className="mt-6">

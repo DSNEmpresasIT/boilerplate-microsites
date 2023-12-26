@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  mode: "jit",
-  content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   darkMode: "class",
   important: true,
   theme: {
@@ -14,7 +13,6 @@ module.exports = {
       "2xl": "1536px",
       lg_992: "992px",
     },
-    
     container: {
       center: true,
       padding: {
@@ -38,8 +36,22 @@ module.exports = {
         dark: "#3c4858",
         black: "#161c2d",
         "dark-footer": "#192132",
+        sexocolor: "#ff0000",
+        chinchulin: {
+          DEFAULT: "hsl(0, 74%, 51%)",
+          "50": "hsl(0, 86%, 97%)",
+          "100": "hsl(0, 93%, 94%)",
+          "200": "hsl(0, 100%, 89%)",
+          "300": "hsl(0, 96%, 82%)",
+          "400": "hsl(0, 93%, 71%)",
+          "500": "hsl(0, 86%, 60%)",
+          "600": "hsl(0, 74%, 51%)",
+          "700": "hsl(0, 76%, 42%)",
+          "800": "hsl(0, 72%, 36%)",
+          "900": "hsl(0, 64%, 31%)",
+          "950": "hsl(0, 77%, 15%)",
+        },
       },
-
       boxShadow: {
         sm: "0 2px 4px 0 rgb(60 72 88 / 0.15)",
         DEFAULT: "0 0 3px rgb(60 72 88 / 0.15)",
@@ -50,18 +62,15 @@ module.exports = {
         inner: "inset 0 2px 4px 0 rgb(60 72 88 / 0.05)",
         testi: "2px 2px 2px -1px rgb(60 72 88 / 0.15)",
       },
-
       spacing: {
         0.75: "0.1875rem",
         3.25: "0.8125rem",
       },
-
       maxWidth: () => ({
         1200: "71.25rem",
         992: "60rem",
         768: "45rem",
       }),
-
       zIndex: {
         1: "1",
         2: "2",
@@ -70,5 +79,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss"), require("autoprefixer")],
+  safelist: [{
+    pattern: /(bg|text|border)-chinchulin-(50|100|200|300|400|500|600|700|800|900)/
+  }]
 };

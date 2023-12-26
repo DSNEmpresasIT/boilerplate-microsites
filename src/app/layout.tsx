@@ -2,6 +2,8 @@ import React from "react"
 import "@/assets/css/tailwind.css"
 import '@/assets/css/material.css'
 import { Nunito, Work_Sans, EB_Garamond, Kaushan_Script, Alex_Brush } from 'next/font/google'
+import HeaderComponent from "@/components/commons/HeaderComponent"
+import FooterComponent from "@/components/commons/FooterComponent"
 
 
 const nunito = Nunito({
@@ -45,10 +47,14 @@ export const metadata = {
   description: 'Techwind - Next Js Multipurpose Landing & Admin Dashboard Template',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode  }) {
   return (
-    <html lang="en" dir="LTR">
-      <body className={`${nunito.variable} ${work_sans.variable} ${eb_garamond.variable} ${kaushan.variable} ${alex.variable} font-nunito text-base text-black dark:text-white dark:bg-slate-900`}>{children}</body>
+    <html lang="es" dir="LTR">
+      <body className={`${nunito.variable} ${work_sans.variable} ${eb_garamond.variable} ${kaushan.variable} ${alex.variable} font-nunito text-base text-black dark:text-white dark:bg-slate-900`}>
+        <HeaderComponent />
+        {children}
+        <FooterComponent />
+      </body>
     </html>
   )
 }

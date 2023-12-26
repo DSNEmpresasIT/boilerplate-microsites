@@ -9,6 +9,7 @@ import {FaRegEnvelope,} from "react-icons/fa"
 import{BiBookAlt} from "react-icons/bi"
 import {BsCheckCircle} from "react-icons/bs"
 import {MdKeyboardArrowRight} from "react-icons/md"
+import { ContactComponent } from "@/components/home/ContactComponent";
 
 
 export default function Index() {
@@ -62,6 +63,7 @@ export default function Index() {
           </div>
         </div>
       </section>
+      <ContactComponent />
     </>
   )
 }

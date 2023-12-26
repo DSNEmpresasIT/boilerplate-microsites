@@ -7,3 +7,8 @@ export interface IBanner {
   icon:string;
   image_url: string[];
 }
+
+export interface ContactComponent {
+  googleMapsSrc: string;
+  imageLogo: string;
+}

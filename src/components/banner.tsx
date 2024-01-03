@@ -1,5 +1,6 @@
 'use client'
-import { IBanner } from '@/interfaces/banner-interfaces';
+
+import { IBanner } from '@/utils/types/types';
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 

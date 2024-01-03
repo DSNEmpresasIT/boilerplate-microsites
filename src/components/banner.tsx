@@ -1,5 +1,8 @@
 'use client'
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2d92f2facae611521874f4fc052ea4c8d8974114
 import { IBanner } from '@/utils/types/types';
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'

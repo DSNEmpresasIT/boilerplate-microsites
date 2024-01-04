@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -15,26 +16,25 @@ import {
 import { PiShoppingCart } from "react-icons/pi";
 import { FooterComponent } from "@/utils/types/types";
 
-const [footerData, setfooterData] = useState< FooterComponent | null>(null);
-
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      // TODO: call service
-      const response = await fetch('');
-      const data: FooterComponent = await response.json();
-
-      setfooterData(data);
-    } catch (error) {
-      console.error('Error to fetch banner data', error);
-    }
-  };
-
-  fetchData();
-}, []);
-
-
 export default function FooterComponent() {
+  const [footerData, setfooterData] = useState< FooterComponent | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // TODO: call service
+        const response = await fetch('');
+        const data: FooterComponent = await response.json();
+  
+        setfooterData(data);
+      } catch (error) {
+        console.error('Error to fetch banner data', error);
+      }
+    };
+  
+    fetchData();
+  }, []);
+
   return (
     <footer className="footer bg-dark-footer relative text-gray-200 dark:text-gray-200">
       <div className="container relative">

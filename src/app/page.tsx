@@ -9,7 +9,7 @@ import {FaRegEnvelope,} from "react-icons/fa"
 import{BiBookAlt} from "react-icons/bi"
 import {BsCheckCircle} from "react-icons/bs"
 import {MdKeyboardArrowRight} from "react-icons/md"
-import Banner from "@/components/banner";
+import Banner from "@/components/home/banner";
 import { ContactComponent } from "@/components/home/ContactComponent";
 
 
@@ -42,7 +42,7 @@ export default function Index() {
   }
   return (
     <>
-
+      <Banner/>
       <section className="relative table w-full py-36 lg:py-44">
         <div className="container relative">
           <div className="grid md:grid-cols-12 grid-cols-1 items-center mt-10 gap-[30px]">

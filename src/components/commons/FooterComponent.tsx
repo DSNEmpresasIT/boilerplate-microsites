@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -13,6 +13,26 @@ import {
   FaBehance,
 } from "react-icons/fa";
 import { PiShoppingCart } from "react-icons/pi";
+import { FooterComponent } from "@/utils/types/types";
+
+const [footerData, setfooterData] = useState< FooterComponent | null>(null);
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      // TODO: call service
+      const response = await fetch('');
+      const data: FooterComponent = await response.json();
+
+      setfooterData(data);
+    } catch (error) {
+      console.error('Error to fetch banner data', error);
+    }
+  };
+
+  fetchData();
+}, []);
+
 
 export default function FooterComponent() {
   return (
@@ -31,9 +51,7 @@ export default function FooterComponent() {
                     alt=""
                   />
                   <p className="max-w-xl mx-auto mt-8">
-                    Splash your dream color Bring your home to lively Colors. We
-                    make it a priority to offer flexible services to accomodate
-                    your needs
+                    {footerData?.description ?? 'Splash your dream color Bring your home to lively Colors. We make it a priority to offer flexible services to accomodate your needs'}
                   </p>
                 </div>
 

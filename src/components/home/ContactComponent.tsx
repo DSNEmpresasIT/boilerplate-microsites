@@ -19,7 +19,7 @@ export const ContactComponent = () => {
             ></iframe>
           </div>
 
-          <div className="md:flex justify-center absolute top-2/4 -translate-y-2/4 ltr:md:-translate-x-2/4 rtl:md:translate-x-2/4 md:start-2/4 start-3 md:end-auto end-3 m-auto">
+          <div style={{ left: '5rem' }} className="absolute top-40">
             <div className="max-w-[400px] w-full bg-white dark:bg-slate-900 rounded-md shadow-xl dark:shadow-gray-800 px-6 py-8">
               <Link href="/">
                 <Image

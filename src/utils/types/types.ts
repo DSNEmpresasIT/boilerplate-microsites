@@ -8,6 +8,14 @@ export interface IBanner {
   image_url: string[];
 }
 
+export interface AboutComponent {
+  badge: string;
+  title: string;
+  description: string;
+  image_1: string;
+  image_2: string;
+}
+
 export interface ContactComponent {
   googleMapsSrc: string;
   imageLogo: string;

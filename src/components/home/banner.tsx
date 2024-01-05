@@ -23,8 +23,9 @@ const banner = () => {
   }, []);
 
   return (
+    <>
   <section className="relative md:py-60 py-36 items-center">
-            <div className="absolute top-0 start-0 w-full h-full z-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-0 start-0 w-full h-full z-0 pointer-events-none overflow-hidden">
                 <iframe
                     src={bannerData?.video_link ?? 'https://www.youtube.com/embed/JsNvHJsufhI?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1'}
                     className="absolute top-1/2 start-1/2 ltr:-translate-x-1/2 rtl:translate-x-1/2 -translate-y-1/2 w-screen h-[56.25vw] min-h-screen min-w-[177.77vw]"
@@ -39,8 +40,16 @@ const banner = () => {
                     <h3 className="font-bold lg:leading-normal leading-normal text-4xl lg:text-5xl mb-5 mt-10 text-white">{bannerData?.title ?? 'Coworking Just Feels Right'}</h3>
                     <p className="text-slate-300 text-lg max-w-2xl mx-auto">{bannerData?.description ?? 'Coworking spaces offer a wealth of advantages for self starters, including networking opportunities, daily structure, and increased productivity.'}</p>
                 </div>
+            </div>     
+  </section>               
+  <div className="relative">
+            <div className="shape absolute sm:-bottom-px -bottom-[2px] start-0 end-0 overflow-hidden z-1 text-white dark:text-slate-900">
+                <svg className="w-full h-auto scale-[2.0] origin-top" viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+                </svg>
             </div>
-  </section>
+    </div>
+  </>
   )
 }
 

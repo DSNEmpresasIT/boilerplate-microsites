@@ -19,22 +19,6 @@ import { FooterComponent } from "@/utils/types/types";
 export default function FooterComponent() {
   const [footerData, setfooterData] = useState< FooterComponent | null>(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // TODO: call service
-        const response = await fetch('');
-        const data: FooterComponent = await response.json();
-  
-        setfooterData(data);
-      } catch (error) {
-        console.error('Error to fetch banner data', error);
-      }
-    };
-  
-    fetchData();
-  }, []);
-
   return (
     <footer className="footer bg-dark-footer relative text-gray-200 dark:text-gray-200">
       <div className="container relative">

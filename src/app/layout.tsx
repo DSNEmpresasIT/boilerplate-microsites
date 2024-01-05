@@ -1,5 +1,5 @@
 import React from "react"
-import "@/assets/css/tailwind.css"
+import "@/app/globals.css"
 import '@/assets/css/material.css'
 import { Nunito, Work_Sans, EB_Garamond, Kaushan_Script, Alex_Brush } from 'next/font/google'
 import HeaderComponent from "@/components/commons/HeaderComponent"

@@ -8,7 +8,7 @@ export const ContactComponent = () => {
   return (
     <section className="overflow-hidden">
       <div className="container-fluid relative">
-        <div className="grid grid-cols-1">
+        <div className="grid md:grid-cols-1 ">
           <div className="border-0 w-full">
             <iframe
               title="google"
@@ -19,7 +19,7 @@ export const ContactComponent = () => {
             ></iframe>
           </div>
 
-          <div style={{ left: '5rem' }} className="absolute top-40">
+          <div  className="absolute top-4 lg:top-40 lg:left-20 left-0 right-0  md:left-20">
             <div className="max-w-[400px] w-full bg-white dark:bg-slate-900 rounded-md shadow-xl dark:shadow-gray-800 px-6 py-8">
               <Link href="/">
                 <Image

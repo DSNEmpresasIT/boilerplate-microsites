@@ -138,15 +138,15 @@ export default function HeaderComponent({ navClass, navJustify }: { navClass?: s
     <>
       <nav
         id="topnav"
-        className={`${navbarTop ? "nav-sticky" : ""} ${
+        className={`${navbarTop ? "fixed container flex justify-between my-5 bg-white min-w-full mt-0 " : ""} ${
           navClass === "nav-light"
             ? ""
-            : navClass === "nav-sticky"
+            : navClass === "fixed container flex justify-between my-5 "
             ? "bg-white dark:bg-slate-900"
             : ""
-        } defaultscroll font-nunito`}
+        } defaultscroll font-nunito z-50`}
       >
-        <div className="container relative">
+        <div className="container flex justify-between my-5 relative">
           {navClass === "nav-light" ? (
             <Link href="/" className="logo">
               <span className="inline-block dark:hidden">

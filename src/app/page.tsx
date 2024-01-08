@@ -3,6 +3,7 @@ import React,{useEffect} from "react"
 import Banner from "@/components/home/BannerComponent";
 import { ContactComponent } from "@/components/home/ContactComponent";
 import { AboutMeComponent } from "@/components/home/AboutMeComponent";
+import CompanyInfoComponent from "@/components/home/CompanyInfoComponent";
 
 
 export default function Index() {
@@ -36,6 +37,7 @@ export default function Index() {
     <>
       <Banner/>
       <AboutMeComponent />
+      <CompanyInfoComponent/>
       <ContactComponent />
     </>
   )

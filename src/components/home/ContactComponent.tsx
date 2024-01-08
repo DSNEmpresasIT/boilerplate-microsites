@@ -19,8 +19,8 @@ export const ContactComponent = () => {
             ></iframe>
           </div>
 
-          <div  className="absolute top-4 lg:top-40 lg:left-20 left-0 right-0  md:left-20">
-            <div className="max-w-[400px] w-full bg-white dark:bg-slate-900 rounded-md shadow-xl dark:shadow-gray-800 px-6 py-8">
+          <div  className="absolute max-w-[400px] flex w-full">
+            <div className="absolute top-40  lg:top-40 lg:left-20 left-0 right-0  md:left-20  w-full bg-white dark:bg-slate-900 rounded-md shadow-xl dark:shadow-gray-800 px-6 py-8">
               <Link href="/">
                 <Image
                   src="/images/logo-icon-64.png"

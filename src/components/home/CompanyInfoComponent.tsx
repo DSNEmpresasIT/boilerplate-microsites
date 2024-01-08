@@ -20,7 +20,7 @@ export default function CompanyInfoComponent(){
 
     
     return(
-        <>
+        <div className='mb-10'>
             <div className="container relative md:mt-24 mt-16">
                 <div className="grid md:grid-cols-12 grid-cols-1 pb-8 items-center">
                     <div className="md:col-span-6">
@@ -84,6 +84,6 @@ export default function CompanyInfoComponent(){
             </div>
 
         
-        </>
+        </div>
     )
 }

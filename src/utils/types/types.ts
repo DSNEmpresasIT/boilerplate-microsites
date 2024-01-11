@@ -47,3 +47,29 @@ export interface contactInformation {
   adress?:string,
   mapUrl?: string,
 }
+
+
+export interface CompanyInfoData {
+  headerTitle: string;
+  headerDesc: string;
+  companyInfoItems: CompanyInfoItems[];
+}
+
+export interface CompanyInfoItems {
+  title: string;
+  desc: string;
+  image: string;
+  Icon: any;
+}
+
+export interface WorkData {
+  headerTitle: string;
+  headerDesc: string;
+  workItems: WorkItems[];
+} 
+
+export interface WorkItems {
+  title: string;
+  desc: string;
+  image: string;
+}

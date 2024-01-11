@@ -5,9 +5,35 @@ import Image from "next/image"
 import "react-18-image-lightbox/style.css"
 import "../../../node_modules/react-modal-video/css/modal-video.css";
 import * as Icon from 'react-feather';
-import { meditationData, workData } from '@/utils/CompanyInfoData'
+import { CompanyInfoData } from '@/utils/types/types'
+import WorkDataComponent from './WorkDataComponent';
 
-
+export const companyInfoData: CompanyInfoData[] = [
+    {
+        headerTitle: "Most Popular Meditation Therapy",
+        headerDesc: "Start working with Techwind that can provide everything you need to generate awareness, drive traffic, connect.",
+        companyInfoItems: [
+            {
+                image: "/images/yoga/sound.jpg",
+                title: "Sound Therapy",
+                desc: "Start working with Techwind that can provide everything you need to generate awareness, drive traffic, connect.",
+                Icon: Icon.Headphones
+            },
+            {
+                image: "/images/yoga/maditation.jpg",
+                title: "Meditation",
+                desc: "Start working with Techwind that can provide everything you need to generate awareness, drive traffic, connect.",
+                Icon: Icon.GitMerge
+            },
+            {
+                image: "/images/yoga/relaxing.jpg",
+                title: "Mindfullness",
+                desc: "Start working with Techwind that can provide everything you need to generate awareness, drive traffic, connect.",
+                Icon: Icon.Sun
+            }
+        ]
+    }
+];
 
 
 export default function CompanyInfoComponent(){
@@ -24,16 +50,16 @@ export default function CompanyInfoComponent(){
             <div className="container relative md:mt-24 mt-16">
                 <div className="grid md:grid-cols-12 grid-cols-1 pb-8 items-center">
                     <div className="md:col-span-6">
-                        <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">Most Popular Meditation Therapy</h3>
+                        <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">{companyInfoData[0].headerTitle}</h3>
                     </div>
 
                     <div className="md:col-span-6">
-                        <p className="text-slate-400 max-w-xl">Start working with Techwind that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                        <p className="text-slate-400 max-w-xl">{companyInfoData[0].headerDesc}</p>
                     </div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 mt-8 gap-[30px]">
-                    {meditationData.map((item:any,index:number)=>{
+                    {companyInfoData[0].companyInfoItems.map((item:any,index:number)=>{
                         const Icon = item.Icon
                         return(
                             <div key={index} className="group rounded-md shadow-md dark:shadow-gray-800 relative overflow-hidden">
@@ -55,34 +81,8 @@ export default function CompanyInfoComponent(){
                 </div>
             </div>
 
-            <div className="container relative md:mt-24 mt-16">
-                <div className="grid grid-cols-1 pb-8 text-center">
-                    <h3 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">How It Work ?</h3>
-
-                    <p className="text-slate-400 max-w-xl mx-auto">Start working with Tailwind CSS that can provide everything you need to generate awareness, drive traffic, connect.</p>
-                </div>
-
-                <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 mt-8 gap-[30px]">
-                    {workData.map((item:any,index : number)=>{
-                        return(
-                            <div key={index} className="group relative lg:px-6 transition-all duration-500 ease-in-out rounded-xl bg-white dark:bg-slate-900 overflow-hidden text-center">
-                                <div className="relative overflow-hidden text-transparent -m-3">
-                                    <Icon.Hexagon className="h-32 w-32 fill-indigo-600/5 mx-auto"></Icon.Hexagon>
-                                    <div className="absolute top-2/4 -translate-y-2/4 start-0 end-0 mx-auto text-indigo-600 rounded-xl transition-all duration-500 ease-in-out text-4xl flex align-middle justify-center items-center">
-                                        <Image src={item.image} width={56} height={56} className="w-14 h-14" alt="" />
-                                    </div>
-                                </div>
-
-                                <div className="mt-6">
-                                    <Link href="#" className="text-xl font-medium transition-all duration-500 ease-in-out hover:text-indigo-600">{item.title}</Link>
-                                    <p className="text-slate-400 transition-all duration-500 ease-in-out mt-3">{item.desc}</p>
-                                </div>
-                            </div>
-                        )
-                    })}
-                </div>
-            </div>
-
+            
+            <WorkDataComponent/>
         
         </div>
     )

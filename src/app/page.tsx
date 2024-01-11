@@ -4,6 +4,7 @@ import Banner from "@/components/home/BannerComponent";
 import { ContactComponent } from "@/components/home/ContactComponent";
 import { AboutMeComponent } from "@/components/home/AboutMeComponent";
 import CompanyInfoComponent from "@/components/home/CompanyInfoComponent";
+import CarrouselComponent from "@/components/home/carrouselComponent";
 
 
 export default function Index() {
@@ -37,7 +38,10 @@ export default function Index() {
     <>
       <Banner/>
       <AboutMeComponent />
-      <CompanyInfoComponent/>
+      <CompanyInfoComponent />
+      <div className="flex justify-center">
+        <CarrouselComponent />
+      </div>
       <ContactComponent />
     </>
   )

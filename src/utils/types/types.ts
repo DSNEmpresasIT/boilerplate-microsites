@@ -41,6 +41,13 @@ export interface Webs {
   link3?: string,
 }
 
+export interface CarrouselData {
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+}
+
 export interface contactInformation {
   phone1?:string,
   phone2?:string,

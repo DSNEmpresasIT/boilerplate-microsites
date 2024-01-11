@@ -1,0 +1,20 @@
+.swiper {
+  width: 25%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 700px;
+  height: 700px;
+  margin-bottom: 50px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  border-radius: 2%;
+}
+

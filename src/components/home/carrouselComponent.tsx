@@ -75,7 +75,7 @@ export default function carrouselComponent() {
   const totalSlides = carrouselData.length;
   let initialSlide = Math.floor(totalSlides / 2);
 
-  // Asegúrate de que el índice sea válido
+  // Ensure that the index is valid
   if (initialSlide < 0) {
     initialSlide = 0;
   } else if (initialSlide >= totalSlides) {

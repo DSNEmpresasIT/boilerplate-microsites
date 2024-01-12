@@ -43,8 +43,22 @@ const alex = Alex_Brush({
 
 
 export const metadata = {
-  title: 'Techwind - Next Js Multipurpose Landing & Admin Dashboard Template',
-  description: 'Techwind - Next Js Multipurpose Landing & Admin Dashboard Template',
+  title: {
+    default: 'DSN | Microsite',
+    template: '%s | DSN'
+  },
+  description: 'Microsite template for DSN microsites',
+  keywords: 'Microsite, DSN, NextJS, ReactJS, TailwindCSS, Typescript, SEO, Microsite template, Microsite template for DSN',
+  themeColor: 'white',
+  icon:{
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+    other: {
+      rel: 'icon',
+      url: '/favicon.ico'
+    },
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode  }) {

@@ -39,7 +39,7 @@ export default function Index() {
       <Banner/>
       <AboutMeComponent />
       <CompanyInfoComponent />
-      <div className="flex justify-center">
+      <div className="flex overflow-hidden justify-center">
         <CarrouselComponent />
       </div>
       <ContactComponent />

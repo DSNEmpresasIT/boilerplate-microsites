@@ -1,10 +1,11 @@
+import { useContactData } from "@/hocks/dataHoocks";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import * as Icon from "react-feather";
 
 export const ContactComponent = () => {
-
+  const { loading, contactData } = useContactData();
   return (
     <section className="overflow-hidden">
       <div className="container-fluid relative">

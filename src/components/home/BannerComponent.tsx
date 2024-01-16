@@ -1,26 +1,11 @@
 'use client'
+import { useBannerData } from '@/hocks/dataHoocks';
 import { IBanner } from '@/utils/types/types';
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 
 const banner = () => {
-  const [bannerData, setBannerData] = useState<IBanner | null>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // TODO: call service
-        const response = await fetch('');
-        const data: IBanner = await response.json();
-
-        setBannerData(data);
-      } catch (error) {
-        console.error('Error to fetch banner data', error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const {bannerData, loading } = useBannerData()
 
   return (
     <>

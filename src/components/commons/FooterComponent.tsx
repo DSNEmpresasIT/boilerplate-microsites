@@ -15,9 +15,10 @@ import {
 } from "react-icons/fa";
 import { PiShoppingCart } from "react-icons/pi";
 import { FooterComponent } from "@/utils/types/types";
+import { useFooterData } from "@/hocks/dataHoocks";
 
 export default function FooterComponent() {
-  const [footerData, setfooterData] = useState< FooterComponent | null>(null);
+  const { footerData, loading } = useFooterData();
 
   return (
     <footer className="footer bg-dark-footer relative text-gray-200 dark:text-gray-200">

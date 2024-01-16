@@ -2,8 +2,11 @@ import React from "react";
 import { PiMapPinLight } from "react-icons/pi";
 import {GoClock} from "react-icons/go"
 import Image from "next/image";
+import { useAboutMeData } from "@/hocks/dataHoocks";
 
 export const AboutMeComponent = () => {
+  const { loading, aboutData } = useAboutMeData();
+
   return (
     <section className="relative md:py-24 py-16">
       <div className="container relative">

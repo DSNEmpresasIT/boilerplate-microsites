@@ -4,40 +4,11 @@ import Image from "next/image"
 import "react-18-image-lightbox/style.css"
 import "../../../node_modules/react-modal-video/css/modal-video.css";
 import * as Icon from 'react-feather';
-import { WorkData } from '@/utils/types/types';
-
-export const workData: WorkData[] = [
-  {
-    headerTitle: "Example Header",
-    headerDesc: "Start working with Tailwind CSS that can provide everything you need to generate awareness, drive traffic, connect.",
-    workItems: [
-      {
-        image: "/images/yoga/life-coach.png",
-        title: "Life Coaching",
-        desc: "If the distribution of letters and words is random, the reader will not be distracted from making."
-      },
-      {
-        image: "/images/yoga/meditation.png",
-        title: "Meditation & Yoga",
-        desc: "If the distribution of letters and words is random, the reader will not be distracted from making."
-      },
-      {
-        image: "/images/yoga/nutrition.png",
-        title: "Nutrition",
-        desc: "If the distribution of letters and words is random, the reader will not be distracted from making."
-      },
-      {
-        image: "/images/yoga/religious.png",
-        title: "Religion",
-        desc: "If the distribution of letters and words is random, the reader will not be distracted from making."
-      },
-    ]
-  }
-];
-  
+import { useWorkData } from '@/hocks/dataHoocks';
 
 
 const WorkDataComponent = () => {
+  const {workData, loading} = useWorkData()
   return (
     <div className="container relative md:mt-24 mt-16">
                 <div className="grid grid-cols-1 pb-8 text-center">

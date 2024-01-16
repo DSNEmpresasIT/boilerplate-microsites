@@ -7,14 +7,14 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
-import '@/assets/css/carrouselStyle.css';
+import '@/assets/css/carouselStyle.css';
 
 // import required modules
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 
 import {useCarouselData} from '@/hocks/dataHoocks'
 
-export default function carrouselComponent() {
+export default function carouselComponent() {
   const {carouselData, loading} = useCarouselData()
   const totalSlides = carouselData.length;
   let initialSlide = Math.floor(totalSlides / 2);

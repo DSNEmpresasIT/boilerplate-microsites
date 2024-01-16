@@ -4,39 +4,12 @@ import Link from "next/link"
 import Image from "next/image"
 import "react-18-image-lightbox/style.css"
 import "../../../node_modules/react-modal-video/css/modal-video.css";
-import * as Icon from 'react-feather';
-import { CompanyInfoData } from '@/utils/types/types'
 import WorkDataComponent from './WorkDataComponent';
-
-export const companyInfoData: CompanyInfoData[] = [
-    {
-        headerTitle: "Most Popular Meditation Therapy",
-        headerDesc: "Start working with Techwind that can provide everything you need to generate awareness, drive traffic, connect.",
-        companyInfoItems: [
-            {
-                image: "/images/yoga/sound.jpg",
-                title: "Sound Therapy",
-                desc: "Start working with Techwind that can provide everything you need to generate awareness, drive traffic, connect.",
-                Icon: Icon.Headphones
-            },
-            {
-                image: "/images/yoga/maditation.jpg",
-                title: "Meditation",
-                desc: "Start working with Techwind that can provide everything you need to generate awareness, drive traffic, connect.",
-                Icon: Icon.GitMerge
-            },
-            {
-                image: "/images/yoga/relaxing.jpg",
-                title: "Mindfullness",
-                desc: "Start working with Techwind that can provide everything you need to generate awareness, drive traffic, connect.",
-                Icon: Icon.Sun
-            }
-        ]
-    }
-];
-
+import { useCompanyInfoData } from '@/hocks/dataHoocks'
 
 export default function CompanyInfoComponent(){
+    const {companyInfoData, loading} = useCompanyInfoData()
+
     useEffect(() => {
         if (typeof window !== "undefined"){
           document.documentElement.setAttribute("dir", "ltr");

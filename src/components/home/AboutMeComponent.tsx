@@ -18,7 +18,7 @@ export const AboutMeComponent = () => {
                     height={0}
                     sizes="100vw"
                     style={{ width: "100%", height: "auto" }}
-                    className="shadow rounded-lg"
+                    className="shadow transitionImage rounded-lg"
                     alt=""
                   />
                 </div>
@@ -32,11 +32,11 @@ export const AboutMeComponent = () => {
                     height={0}
                     sizes="100vw"
                     style={{ width: "100%", height: "auto" }}
-                    className="shadow rounded-lg"
+                    className="shadow transitionImage rounded-lg"
                     alt=""
                   />
 
-                  <div className="w-28 h-28 bg-indigo-600/10 rounded-lg"></div>
+                  <div className="w-28 transitionImage h-28 bg-indigo-600/10 rounded-lg"></div>
                 </div>
               </div>
             </div>

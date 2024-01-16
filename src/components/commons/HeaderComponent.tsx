@@ -46,8 +46,8 @@ export default function HeaderComponent({ navClass, navJustify }: { navClass?: s
     const mybutton = document.getElementById("back-to-top");
     if (mybutton != null) {
       if (
-        document.body.scrollTop > 500 ||
-        document.documentElement.scrollTop > 500
+        document.body.scrollTop > 600 ||
+        document.documentElement.scrollTop > 600
       ) {
         mybutton.classList.add("flex");
         mybutton.classList.remove("hidden");
@@ -137,16 +137,9 @@ export default function HeaderComponent({ navClass, navJustify }: { navClass?: s
   return (
     <>
       <nav
-        id="topnav"
-        className={`${navbarTop ? "fixed container flex justify-between my-5 bg-white min-w-full mt-0 " : ""} ${
-          navClass === "nav-light"
-            ? ""
-            : navClass === "fixed container flex justify-between my-5 "
-            ? "bg-white dark:bg-slate-900"
-            : ""
-        } defaultscroll font-nunito z-50`}
+        className={` headerScroll  container fixed z-50  flex justify-between my-5  min-w-full mt-0   font-nunito  `}
       >
-        <div className="container flex justify-between my-5 relative">
+        <div className="container flex justify-between my-5 ">
           {navClass === "nav-light" ? (
             <Link href="/" className="logo">
               <span className="inline-block dark:hidden">

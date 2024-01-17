@@ -71,11 +71,11 @@ export const mockAboutData = ():AboutComponent => {
 
 export const mockBannerData = ():IBanner => {
   return {
-    title: 'title',
-    description: 'description',
+    title: 'El Brillante',
+    description: 'Coworking spaces offer a wealth of advantages for self starters, including networking opportunities, daily structure, and increased productivity.',
     useful_links: [{nombre:'nombre', url: 'url'}],
-    video_link: 'video_link',
-    icon:'icon',
+    video_link: 'https://www.youtube.com/embed/JsNvHJsufhI?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1',
+    icon:'../../public/images/logo-icon-64.png',
     image_url: ['image_url'],
   }
 }

@@ -15,15 +15,12 @@ import { EffectCoverflow, Pagination } from 'swiper/modules';
 import {useCarouselData} from '@/hocks/dataHoocks'
 
 export default function carouselComponent() {
-  const {carouselData, loading} = useCarouselData()
-  const totalSlides = carouselData.length;
-  let initialSlide = Math.floor(totalSlides / 2);
-  console.log(totalSlides)
-  // Ensure that the index is valid
-  if (initialSlide < 0) {
-    initialSlide = 3;
-  } else if (initialSlide >= totalSlides) {
-    initialSlide = totalSlides - 1;
+  const { data, loading} = useCarouselData()
+
+  const initialSlide = (): number => {
+     if (data.length <= 0){
+      return 4
+    } else return data.length/2
   }
 
   return (
@@ -41,11 +38,11 @@ export default function carouselComponent() {
           slideShadows: true,
         }}
         pagination={true}
-        initialSlide={initialSlide}
+        initialSlide={initialSlide()}
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        {carouselData.map((item) => (
+        {data.map((item) => (
           <SwiperSlide key={item.id}>
             <img src={item.image} />
           </SwiperSlide>

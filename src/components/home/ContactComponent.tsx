@@ -5,7 +5,7 @@ import React from "react";
 import * as Icon from "react-feather";
 
 export const ContactComponent = () => {
-  const { loading, contactData } = useContactData();
+  const { loading, data } = useContactData();
   return (
     <section className="overflow-hidden">
       <div className="container-fluid relative">

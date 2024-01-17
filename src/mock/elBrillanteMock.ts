@@ -81,8 +81,8 @@ export const mockBannerData = ():IBanner => {
 }
 
 
-export const mockCompanyInfoData = ():CompanyInfoData[] => [
-  {
+export const mockCompanyInfoData = ():CompanyInfoData => {
+  return {
     headerTitle: "Most Popular Meditation Therapy",
     headerDesc: "Start working with Techwind that can provide everything you need to generate awareness, drive traffic, connect.",
     companyInfoItems: [
@@ -106,7 +106,7 @@ export const mockCompanyInfoData = ():CompanyInfoData[] => [
         }
     ]
   }
-]
+}
 
 export const mockContactData = ():ContactComponent => {
   return {
@@ -116,8 +116,8 @@ export const mockContactData = ():ContactComponent => {
 }
 
 
-export const mockWorkData = ():WorkData[] => [
-  {
+export const mockWorkData = ():WorkData => {
+  return {
     headerTitle: "Example Header",
     headerDesc: "Start working with Tailwind CSS that can provide everything you need to generate awareness, drive traffic, connect.",
     workItems: [
@@ -143,7 +143,7 @@ export const mockWorkData = ():WorkData[] => [
       },
     ]
   }
-]
+}
 
 
 export const mockFooterData = ():FooterComponent => {

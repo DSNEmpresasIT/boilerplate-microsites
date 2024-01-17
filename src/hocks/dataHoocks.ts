@@ -3,194 +3,109 @@ import { useEffect, useState } from "react"
 import { mockAboutData, mockBannerData, mockCarouselData, mockCompanyInfoData, mockContactData, mockFooterData, mockGlobalData, mockWorkData } from "../mock/elBrillanteMock"
 import { AboutComponent, CarouselData, CompanyInfoData, ContactComponent, FooterComponent, GlobalData, IBanner, WorkData } from '../utils/types/types'
 
-export const useCarouselData = () => {
-  const [carouselData, setCarouselData] = useState<CarouselData[]>([]);
+interface UseDataProps<T> {
+  // fetchData: () => Promise<T>; // Uncomment when the API is available
+  fetchData: () => T ;// remove when the API is available
+  initialState: T | (() => T);
+  errorMessage: string;
+}
+
+const useData = <T>({
+  fetchData,
+  initialState,
+  errorMessage,
+}: UseDataProps<T>) => {
+  const [data, setData] = useState(initialState);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchDataAsync = async () => {
       try {
-        // TODO: uncomment when the api is available
-        // const data = await getCarouselData();
-        // setCarouselData(data);
-        setCarouselData(mockCarouselData);
+        // Uncomment when the API is available
+        // const result = await fetchData();
+        // setData(result);
+
+        // For testing purposes, use mock data and remove when the API is available (const mockResult = fetchData() and setData(mockResult))
+        const mockResult =  fetchData();
+        setData((prevData) => {
+          // Compare the previous data with the new data to avoid unnecessary re-renders
+          return JSON.stringify(prevData) !== JSON.stringify(mockResult)
+            ? mockResult
+            : prevData;
+        });
       } catch (error:any) {
-        console.error(`Error in useCarouselData: ${error.message}`);
+        console.error(`Error in useData: ${errorMessage}`, error.message);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchData(); 
-  }, []); 
+    fetchDataAsync();
+  }, [fetchData, initialState, errorMessage]);
 
-  return { carouselData, loading };
+  return { data, loading };
+};
+
+export const useCarouselData = () => {
+  return useData({
+    fetchData:  mockCarouselData,
+    initialState: [],
+    errorMessage: "Error in useCarouselData",
+  });
 };
 
 export const useAboutMeData = () => {
-  const [aboutData, setAboutData] = useState<AboutComponent>();
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // TODO: uncomment when the api is available
-        // const data = await getAboutData();
-        // setAboutData(data);
-        setAboutData(mockAboutData)
-      } catch (error:any) {
-        console.error(`Error in useAboutData: ${error.message}`);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData(); 
-  }, []); 
-
-  return { aboutData, loading };
+  return useData({
+    fetchData: mockAboutData,
+    initialState: undefined,
+    errorMessage: "Error in useAboutMeData",
+  });
 }
 
 export const useBannerData = () => {
-  const [bannerData, setBannerData] = useState<IBanner>();
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // TODO: uncomment when the api is available
-        // const data = await getBannerData();
-        // setBannerData(data);
-        setBannerData(mockBannerData)
-      } catch (error:any) {
-        console.error(`Error in useBannerData: ${error.message}`);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData(); 
-  }, []); 
-
-  return { bannerData, loading };
+ return useData({
+    fetchData: mockBannerData,
+    initialState: undefined,
+    errorMessage: "Error in useBannerData",
+  });
 }
 
 export const useCompanyInfoData = () => {
-  const [companyInfoData, setCompanyInfoData] = useState<CompanyInfoData[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // TODO: uncomment when the api is available
-        // const data = await getCompanyInfoData();
-        // setCompanyInfoData(data);
-        setCompanyInfoData(mockCompanyInfoData)
-      } catch (error:any) {
-        console.error(`Error in useCompanyInfoData: ${error.message}`);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData(); 
-  }, []); 
-
-  return { companyInfoData, loading };
+  return useData({
+    fetchData: mockCompanyInfoData,
+    initialState: {} as CompanyInfoData,
+    errorMessage: "Error in useCompanyInfoData",
+  });
 }
 
 export const useWorkData = () => {
-  const [workData, setWorkData] = useState<WorkData[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // TODO: uncomment when the api is available
-        // const data = await getWorkData();
-        // setWorkData(data);
-        setWorkData(mockWorkData)
-      } catch (error:any) {
-        console.error(`Error in useWorkData: ${error.message}`);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData(); 
-  }, []); 
-
-  return { workData, loading };
+  return useData({
+    fetchData: mockWorkData,
+    initialState: {} as WorkData,
+    errorMessage: "Error in useWorkData",
+  });
 }
 
 export const useContactData = () => {
-  const [contactData, setContactData] = useState<ContactComponent>();
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // TODO: uncomment when the api is available
-        // const data = await getContactData();
-        // setContactData(data);
-        setContactData(mockContactData)
-      } catch (error:any) {
-        console.error(`Error in useContactData: ${error.message}`);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData(); 
-  }, []); 
-
-  return { contactData, loading };
+ return useData({
+    fetchData: mockContactData,
+    initialState: undefined,
+    errorMessage: "Error in useContactData",
+  });
 }
 
 export const useFooterData = () => {
-  const [footerData, setFooterData] = useState<FooterComponent>();
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // TODO: uncomment when the api is available
-        // const data = await getFooterData();
-        // setFooterData(data);
-        setFooterData(mockFooterData)
-      } catch (error:any) {
-        console.error(`Error in useFooterData: ${error.message}`);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData(); 
-  }, []); 
-
-  return { footerData, loading };
+  return useData({
+    fetchData: mockFooterData,
+    initialState: undefined,
+    errorMessage: "Error in useFooterData",
+  });
 }
 
 export const useGlobalData = () => {
-  const [globalData, setGlobalData] = useState<GlobalData>();
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // TODO: uncomment when the api is available
-        // const data = await getGlobalData();
-        // setGlobalData(data);
-        setGlobalData(mockGlobalData)
-      } catch (error:any) {
-        console.error(`Error in useFooterData: ${error.message}`);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData(); 
-  }, []);
-
-      return { globalData, loading };
+  return useData({
+    fetchData: mockGlobalData,
+    initialState: undefined,
+    errorMessage: "Error in useGlobalData",
+  })
 }

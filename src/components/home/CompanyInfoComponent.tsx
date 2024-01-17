@@ -8,7 +8,7 @@ import WorkDataComponent from './WorkDataComponent';
 import { useCompanyInfoData } from '@/hocks/dataHoocks'
 
 export default function CompanyInfoComponent(){
-    const {companyInfoData, loading} = useCompanyInfoData()
+    const { data, loading} = useCompanyInfoData()
 
     useEffect(() => {
         if (typeof window !== "undefined"){
@@ -23,16 +23,16 @@ export default function CompanyInfoComponent(){
             <div className="container relative md:mt-24 mt-16">
                 <div className="grid md:grid-cols-12 grid-cols-1 pb-8 items-center">
                     <div className="md:col-span-6">
-                        <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">{companyInfoData[0].headerTitle}</h3>
+                        <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">{data.headerTitle}</h3>
                     </div>
 
                     <div className="md:col-span-6">
-                        <p className="text-slate-400 max-w-xl">{companyInfoData[0].headerDesc}</p>
+                        <p className="text-slate-400 max-w-xl">{data.headerDesc}</p>
                     </div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 mt-8 gap-[30px]">
-                    {companyInfoData[0].companyInfoItems.map((item:any,index:number)=>{
+                    {data.companyInfoItems &&( data.companyInfoItems.map ((item:any,index:number)=>{
                         const Icon = item.Icon
                         return(
                             <div key={index} className="group rounded-md shadow-md dark:shadow-gray-800 relative overflow-hidden">
@@ -50,7 +50,7 @@ export default function CompanyInfoComponent(){
                                 </div>
                             </div>
                         )
-                    })}
+                    }))}
                 </div>
             </div>
 

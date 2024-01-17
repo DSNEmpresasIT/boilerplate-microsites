@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useAboutMeData } from "@/hocks/dataHoocks";
 
 export const AboutMeComponent = () => {
-  const { loading, aboutData } = useAboutMeData();
+  const { data, loading } = useAboutMeData();
 
   return (
     <section className="relative md:py-24 py-16">

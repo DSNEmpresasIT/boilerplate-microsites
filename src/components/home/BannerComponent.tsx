@@ -1,5 +1,5 @@
 'use client'
-import { useBannerData } from '@/hocks/dataHoocks';
+import { useBannerData } from '@/utils/hoocks/dataHooks';
 import { IBanner } from '@/utils/types/types';
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'

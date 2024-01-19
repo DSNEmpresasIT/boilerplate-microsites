@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 // change the import according to the required mock "../mock/elBrillanteMock" or from ".../mock/otherClientMock".
 import { mockAboutData, mockBannerData, mockCarouselData, mockCompanyInfoData, mockContactData, mockFooterData, mockGlobalData, mockWorkData } from "../mock/elBrillanteMock"
-import { AboutComponent, CarouselData, CompanyInfoData, ContactComponent, FooterComponent, GlobalData, IBanner, WorkData } from '../utils/types/types'
+import { AboutComponent, CarouselData, CompanyInfoData, ContactComponent, FooterComponent, GlobalData, IBanner, WorkData } from '../types/types'
 
 interface UseDataProps<T> {
   // fetchData: () => Promise<T>; // Uncomment when the API is available

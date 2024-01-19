@@ -5,7 +5,7 @@ import Image from "next/image"
 import "react-18-image-lightbox/style.css"
 import "../../../node_modules/react-modal-video/css/modal-video.css";
 import WorkDataComponent from './WorkDataComponent';
-import { useCompanyInfoData } from '@/hocks/dataHoocks'
+import { useCompanyInfoData } from '@/utils/hoocks/dataHooks'
 
 export default function CompanyInfoComponent(){
     const { data, loading} = useCompanyInfoData()

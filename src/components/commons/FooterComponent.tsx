@@ -15,7 +15,7 @@ import {
 } from "react-icons/fa";
 import { PiShoppingCart } from "react-icons/pi";
 import { FooterComponent } from "@/utils/types/types";
-import { useFooterData } from "@/hocks/dataHoocks";
+import { useFooterData } from "@/utils/hoocks/dataHooks";
 
 export default function FooterComponent() {
   const { data, loading } = useFooterData();

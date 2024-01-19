@@ -4,7 +4,7 @@ import Image from "next/image"
 import "react-18-image-lightbox/style.css"
 import "../../../node_modules/react-modal-video/css/modal-video.css";
 import * as Icon from 'react-feather';
-import { useWorkData } from '@/hocks/dataHoocks';
+import { useWorkData } from '@/utils/hoocks/dataHooks';
 
 
 const WorkDataComponent = () => {

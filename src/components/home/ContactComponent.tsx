@@ -1,4 +1,4 @@
-import { useContactData } from "@/hocks/dataHoocks";
+import { useContactData } from "@/utils/hoocks/dataHooks";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

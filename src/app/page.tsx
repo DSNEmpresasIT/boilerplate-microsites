@@ -4,7 +4,7 @@ import Banner from "@/components/home/BannerComponent";
 import { ContactComponent } from "@/components/home/ContactComponent";
 import { AboutMeComponent } from "@/components/home/AboutMeComponent";
 import CompanyInfoComponent from "@/components/home/CompanyInfoComponent";
-import CarrouselComponent from "@/components/home/carrouselComponent";
+import CarrouselComponent from "@/components/home/carouselComponent";
 
 
 export default function Index() {

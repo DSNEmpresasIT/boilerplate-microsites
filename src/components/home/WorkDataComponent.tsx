@@ -4,50 +4,21 @@ import Image from "next/image"
 import "react-18-image-lightbox/style.css"
 import "../../../node_modules/react-modal-video/css/modal-video.css";
 import * as Icon from 'react-feather';
-import { WorkData } from '@/utils/types/types';
-
-export const workData: WorkData[] = [
-  {
-    headerTitle: "Example Header",
-    headerDesc: "Start working with Tailwind CSS that can provide everything you need to generate awareness, drive traffic, connect.",
-    workItems: [
-      {
-        image: "/images/yoga/life-coach.png",
-        title: "Life Coaching",
-        desc: "If the distribution of letters and words is random, the reader will not be distracted from making."
-      },
-      {
-        image: "/images/yoga/meditation.png",
-        title: "Meditation & Yoga",
-        desc: "If the distribution of letters and words is random, the reader will not be distracted from making."
-      },
-      {
-        image: "/images/yoga/nutrition.png",
-        title: "Nutrition",
-        desc: "If the distribution of letters and words is random, the reader will not be distracted from making."
-      },
-      {
-        image: "/images/yoga/religious.png",
-        title: "Religion",
-        desc: "If the distribution of letters and words is random, the reader will not be distracted from making."
-      },
-    ]
-  }
-];
-  
+import { useWorkData } from '@/utils/hoocks/dataHooks';
 
 
 const WorkDataComponent = () => {
+  const { data, loading} = useWorkData()
   return (
     <div className="container relative md:mt-24 mt-16">
                 <div className="grid grid-cols-1 pb-8 text-center">
-                    <h3 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">{workData[0].headerTitle}</h3>
+                    <h3 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">{data.headerTitle}</h3>
 
-                    <p className="text-slate-400 max-w-xl mx-auto">{workData[0].headerDesc}</p>
+                    <p className="text-slate-400 max-w-xl mx-auto">{data.headerDesc}</p>
                 </div>
 
                 <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 mt-8 gap-[30px]">
-                    {workData[0].workItems.map((item:any,index : number)=>{
+                    {data.workItems && ( data.workItems.map((item:any,index : number)=>{
                         return(
                             <div key={index} className="group relative lg:px-6 transition-all duration-500 ease-in-out rounded-xl bg-white dark:bg-slate-900 overflow-hidden text-center">
                                 <div className="relative overflow-hidden text-transparent -m-3">
@@ -63,7 +34,7 @@ const WorkDataComponent = () => {
                                 </div>
                             </div>
                         )
-                    })}
+                    }))}
                 </div>
             </div>
   )

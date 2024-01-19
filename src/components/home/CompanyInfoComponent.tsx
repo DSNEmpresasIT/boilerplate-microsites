@@ -4,39 +4,12 @@ import Link from "next/link"
 import Image from "next/image"
 import "react-18-image-lightbox/style.css"
 import "../../../node_modules/react-modal-video/css/modal-video.css";
-import * as Icon from 'react-feather';
-import { CompanyInfoData } from '@/utils/types/types'
 import WorkDataComponent from './WorkDataComponent';
-
-export const companyInfoData: CompanyInfoData[] = [
-    {
-        headerTitle: "Most Popular Meditation Therapy",
-        headerDesc: "Start working with Techwind that can provide everything you need to generate awareness, drive traffic, connect.",
-        companyInfoItems: [
-            {
-                image: "/images/yoga/sound.jpg",
-                title: "Sound Therapy",
-                desc: "Start working with Techwind that can provide everything you need to generate awareness, drive traffic, connect.",
-                Icon: Icon.Headphones
-            },
-            {
-                image: "/images/yoga/maditation.jpg",
-                title: "Meditation",
-                desc: "Start working with Techwind that can provide everything you need to generate awareness, drive traffic, connect.",
-                Icon: Icon.GitMerge
-            },
-            {
-                image: "/images/yoga/relaxing.jpg",
-                title: "Mindfullness",
-                desc: "Start working with Techwind that can provide everything you need to generate awareness, drive traffic, connect.",
-                Icon: Icon.Sun
-            }
-        ]
-    }
-];
-
+import { useCompanyInfoData } from '@/utils/hoocks/dataHooks'
 
 export default function CompanyInfoComponent(){
+    const { data, loading} = useCompanyInfoData()
+
     useEffect(() => {
         if (typeof window !== "undefined"){
           document.documentElement.setAttribute("dir", "ltr");
@@ -50,16 +23,16 @@ export default function CompanyInfoComponent(){
             <div className="container relative md:mt-24 mt-16">
                 <div className="grid md:grid-cols-12 grid-cols-1 pb-8 items-center">
                     <div className="md:col-span-6">
-                        <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">{companyInfoData[0].headerTitle}</h3>
+                        <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">{data.headerTitle}</h3>
                     </div>
 
                     <div className="md:col-span-6">
-                        <p className="text-slate-400 max-w-xl">{companyInfoData[0].headerDesc}</p>
+                        <p className="text-slate-400 max-w-xl">{data.headerDesc}</p>
                     </div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 mt-8 gap-[30px]">
-                    {companyInfoData[0].companyInfoItems.map((item:any,index:number)=>{
+                    {data.companyInfoItems &&( data.companyInfoItems.map ((item:any,index:number)=>{
                         const Icon = item.Icon
                         return(
                             <div key={index} className="group rounded-md shadow-md dark:shadow-gray-800 relative overflow-hidden">
@@ -77,7 +50,7 @@ export default function CompanyInfoComponent(){
                                 </div>
                             </div>
                         )
-                    })}
+                    }))}
                 </div>
             </div>
 

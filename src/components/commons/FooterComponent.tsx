@@ -15,9 +15,10 @@ import {
 } from "react-icons/fa";
 import { PiShoppingCart } from "react-icons/pi";
 import { FooterComponent } from "@/utils/types/types";
+import { useFooterData } from "@/utils/hoocks/dataHooks";
 
 export default function FooterComponent() {
-  const [footerData, setfooterData] = useState< FooterComponent | null>(null);
+  const { data, loading } = useFooterData();
 
   return (
     <footer className="footer bg-dark-footer relative text-gray-200 dark:text-gray-200">
@@ -35,7 +36,7 @@ export default function FooterComponent() {
                     alt=""
                   />
                   <p className="max-w-xl mx-auto mt-8">
-                    {footerData?.description ?? 'Splash your dream color Bring your home to lively Colors. We make it a priority to offer flexible services to accomodate your needs'}
+                    {data?.description ?? 'Splash your dream color Bring your home to lively Colors. We make it a priority to offer flexible services to accomodate your needs'}
                   </p>
                 </div>
 

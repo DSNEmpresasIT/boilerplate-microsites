@@ -41,7 +41,7 @@ export interface Webs {
   link3?: string,
 }
 
-export interface CarrouselData {
+export interface CarouselData {
   id: number;
   image: string;
   title: string;

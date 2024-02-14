@@ -12,7 +12,7 @@ import '@/assets/css/carouselStyle.css';
 // import required modules
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 
-import {useCarouselData} from '@/utils/hoocks/dataHooks'
+import {useCarouselData} from '@/utils/hooks/dataHooks'
 
 export default function carouselComponent() {
   const { data, loading} = useCarouselData()

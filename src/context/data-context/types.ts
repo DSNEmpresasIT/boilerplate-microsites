@@ -26,7 +26,7 @@ export interface DataContextState {
   };
   carousel: {
     isActive: boolean;
-    data: CarouselData;
+    data: CarouselData[];
   };
   companyInfo: {
     isActive: boolean;

@@ -28,12 +28,7 @@ const initialState: DataContextState = {
     }},
   carousel:{ 
     isActive: true,
-    data: {
-      description: '',
-      id: 0,
-      image: "",
-      title: ''
-    }
+    data: []
   }, 
   companyInfo:  { 
     isActive: true,

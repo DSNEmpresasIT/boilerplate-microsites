@@ -5,11 +5,23 @@ export const reducer = (state: DataContextState, action: DataContextAction): Dat
     case DataContextActionTypes.ABOUT_SECTION_CHANGE:
       return {
         ...state,
-        about: {
-          isActive: action.payload.isActive,
-          data: action.payload.data
-        }
+        about: action.payload
       }; 
+    case DataContextActionTypes.BANNER_SECTION_CHANGE:
+      return {
+        ...state,
+        banner: action.payload
+      }
+    case DataContextActionTypes.COMPANY_SECTION_CHANGE:
+      return {
+        ...state,
+        companyInfo: action.payload
+      }
+    case DataContextActionTypes.CONTACT_SECTION_CHANGE:
+      return {
+        ...state,
+        contact: action.payload
+      }
     default:
       return state;
   }

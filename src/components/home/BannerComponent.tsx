@@ -1,18 +1,31 @@
 "use client";
+import { useDataContext } from "@/context/data-context/DataContext";
+import { DataContextActionTypes } from "@/context/data-context/types";
 import { useBannerData } from "@/utils/hooks/dataHooks";
+import { mockBannerData } from "@/utils/mock/mockData";
 import { IBanner } from "@/utils/types/types";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 const BannerComponent = () => {
-  const { data, loading } = useBannerData();
+  const { state, dispatch } = useDataContext();
+  
+  useEffect(() => {
+    dispatch({
+      type: DataContextActionTypes.BANNER_SECTION_CHANGE,
+      payload: {
+        isActive: true,
+        data: mockBannerData()
+      }
+    })
+  }, [state])
 
   return (
     <>
       <section className="relative py-36 items-center">
         <div className="absolute top-0 start-0 w-full h-full z-0 pointer-events-none overflow-hidden">
           <iframe
-            src={data?.video_link}
+            src={state.banner.data?.video_link}
             className="absolute top-1/2 start-1/2 ltr:-translate-x-1/2 rtl:translate-x-1/2 -translate-y-1/2 w-screen h-[56.25vw] min-h-screen min-w-[177.77vw]"
             title="Embedded YouTube Video"
           ></iframe>
@@ -25,17 +38,17 @@ const BannerComponent = () => {
         <div className="container relative">
           <div className="grid grid-cols-1 pb-8 text-center mt-10">
             <Image
-              src={data?.icon ?? "/images/logo-icon-64.png"}
+              src={state.banner.data?.icon ?? "/images/logo-icon-64.png"}
               width={82}
               height={80}
               className="block mx-auto animate-[spin_10s_linear_infinite]"
               alt=""
             />
             <h3 className="font-bold lg:leading-normal leading-normal text-4xl lg:text-5xl mb-5 mt-10 text-white">
-              {data?.title}
+              {state.banner.data?.title}
             </h3>
             <p className="text-slate-300 text-lg max-w-2xl mx-auto">
-              {data?.description}
+              {state.banner.data?.description}
             </p>
           </div>
         </div>

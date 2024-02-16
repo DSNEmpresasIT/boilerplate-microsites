@@ -1,34 +1,49 @@
+import { useDataContext } from "@/context/data-context/DataContext";
+import { DataContextActionTypes } from "@/context/data-context/types";
 import { useContactData } from "@/utils/hooks/dataHooks";
+import { mockContactData } from "@/utils/mock/mockData";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import * as Icon from "react-feather";
 
 export const ContactComponent = () => {
-  const { loading, data } = useContactData();
+  const { state, dispatch } = useDataContext();
+
+  useEffect(() => {
+    dispatch({
+      type: DataContextActionTypes.CONTACT_SECTION_CHANGE,
+      payload: {
+        isActive: true,
+        data: mockContactData()
+      }
+    })
+  }, [state])
+
   return (
     <section className="overflow-hidden">
       <div className="container-fluid relative">
-        <div className="grid md:grid-cols-1 ">
+        <div className="grid md:grid-cols-1">
           <div className="border-0 w-full">
             <iframe
-              title="google"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13622.329221377997!2d-58.02625848261718!3d-31.398078899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95ade8040a01d287%3A0x4705fab9fcbdf5a2!2sDsn%20Empresas!5e0!3m2!1ses!2sar!4v1703631288199!5m2!1ses!2sar"
+              title="Mapa google"
+              src={state.contact.data.googleMapsSrc}
               style={{ border: "0" }}
               className="h-screen w-full"
               allowFullScreen
             ></iframe>
           </div>
 
-          <div  className="absolute max-w-[400px] flex w-full">
+          <div className="absolute max-w-[400px] flex w-full">
             <div className="absolute top-40  lg:top-40 lg:left-20 left-0 right-0  md:left-20  w-full bg-white dark:bg-slate-900 rounded-md shadow-xl dark:shadow-gray-800 px-6 py-8">
               <Link href="/">
                 <Image
-                  src="/images/logo-icon-64.png"
+                  src={state.contact.data.imageLogo}
                   width={72}
                   height={64}
                   className="mx-auto"
-                  alt=""
+                  title="Logo compañía"
+                  alt="company-image-logo"
                 />
               </Link>
               <h3 className="my-6 text-2xl leading-normal font-medium text-center">

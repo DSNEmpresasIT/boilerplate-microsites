@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { PiMapPinLight } from "react-icons/pi";
 import {GoClock} from "react-icons/go"
 import Image from "next/image";
-import { useAboutMeData } from "@/utils/hoocks/dataHooks";
+import { useDataContext } from "@/context/data-context/DataContext";
+import { DataContextActionTypes, DataContextStateTypes } from "@/context/data-context/types";
+import { mockAboutData } from "@/utils/mock/mockData";
 
 export const AboutMeComponent = () => {
-  const { data, loading } = useAboutMeData();
+  const { state, dispatch }:DataContextStateTypes = useDataContext()
+
+  useEffect(() => {
+    // Here we can use a custom service but for now we gonna use the mock data
+    dispatch({
+      type: DataContextActionTypes.ABOUT_SECTION_CHANGE,
+      payload: {
+        isActive: true,
+        data: mockAboutData()
+      }
+    })
+  }, [])
 
   return (
     <section className="relative md:py-24 py-16">
@@ -16,7 +29,7 @@ export const AboutMeComponent = () => {
               <div className="col-span-7">
                 <div className="grid grid-cols-1 gap-4">
                   <Image
-                    src="/images/event/1.jpg"
+                    src={state.about.data.image_1}
                     width={0}
                     height={0}
                     sizes="100vw"
@@ -30,7 +43,7 @@ export const AboutMeComponent = () => {
               <div className="col-span-5">
                 <div className="grid grid-cols-1 gap-4">
                   <Image
-                    src="/images/event/2.jpg"
+                    src={state.about.data.image_1}
                     width={0}
                     height={0}
                     sizes="100vw"
@@ -48,18 +61,14 @@ export const AboutMeComponent = () => {
           <div className="md:col-span-6">
             <div className="lg:ms-5">
               <h6 className="text-indigo-600 text-sm font-bold uppercase mb-2">
-                Outpace Your Competition
+                {state.about.data.badge}
               </h6>
               <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
-                Get access to the full <br /> conference experience.
+                {state.about.data.title}
               </h3>
 
               <p className="text-slate-400 max-w-xl mb-6">
-                Get instant helpful resources about anything on the go, easily
-                implement secure money transfer solutions, boost your daily
-                efficiency, connect to other app users and create your own
-                Techwind network, and much more with just a few taps. commodo
-                consequat. Duis aute irure.
+                {state.about.data.description}
               </p>
 
               <div className="flex mt-6">

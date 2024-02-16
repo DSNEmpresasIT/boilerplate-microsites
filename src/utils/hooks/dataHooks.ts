@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-// change the import according to the required mock "../mock/elBrillanteMock" or from ".../mock/otherClientMock".
-import { mockAboutData, mockBannerData, mockCarouselData, mockCompanyInfoData, mockContactData, mockFooterData, mockGlobalData, mockWorkData } from "../mock/elBrillanteMock"
+// change the import according to the required mock "../mock/mockData" or from ".../mock/otherClientMock".
+import { mockAboutData, mockBannerData, mockCarouselData, mockCompanyInfoData, mockContactData, mockFooterData, mockGlobalData, mockWorkData } from "../mock/mockData"
 import { AboutComponent, CarouselData, CompanyInfoData, ContactComponent, FooterComponent, GlobalData, IBanner, WorkData } from '../types/types'
 
 interface UseDataProps<T> {

@@ -4,6 +4,7 @@ import '@/assets/css/material.css'
 import { Nunito, Work_Sans, EB_Garamond, Kaushan_Script, Alex_Brush } from 'next/font/google'
 import HeaderComponent from "@/components/commons/HeaderComponent"
 import FooterComponent from "@/components/commons/FooterComponent"
+import { DataContextProvider } from "@/context/data-context/DataContext"
 
 
 const nunito = Nunito({
@@ -65,9 +66,11 @@ export default function RootLayout({ children }: { children: React.ReactNode  })
   return (
     <html lang="es" dir="LTR">
       <body className={`${nunito.variable} ${work_sans.variable} ${eb_garamond.variable} ${kaushan.variable} ${alex.variable} font-nunito text-base text-black dark:text-white dark:bg-slate-900`}>
+      <DataContextProvider>
         <HeaderComponent />
-        {children}
+          {children}
         <FooterComponent />
+      </DataContextProvider>
       </body>
     </html>
   )

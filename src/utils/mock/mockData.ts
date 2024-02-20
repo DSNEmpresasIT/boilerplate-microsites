@@ -169,6 +169,7 @@ export const mockGlobalData = ():GlobalData => {
       phone2: 'phone2',
       adress: 'adress',
       mapUrl: 'mapUrl',
+      schedule: 'Schedule'
     },
   }
 }

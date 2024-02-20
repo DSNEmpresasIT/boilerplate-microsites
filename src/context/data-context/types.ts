@@ -1,4 +1,4 @@
-import { AboutComponent, CarouselData, CompanyInfoData, ContactComponent, IBanner, WorkData } from "@/utils/types/types";
+import { AboutComponent, CarouselData, CompanyInfoData, ContactComponent, GlobalData, IBanner, WorkData } from "@/utils/types/types";
 import { Dispatch } from "react";
 
 export enum DataContextActionTypes {
@@ -8,7 +8,8 @@ export enum DataContextActionTypes {
   CONTACT_SECTION_CHANGE = 'CONTACT_CHANGE_DATA',
   CAROUSEL_SECTION_CHANGE = 'CAROUSEL_CHANGE_DATA',
   COMPANY_SECTION_CHANGE =  'COMPANY_CHANGE_DATA',
-  WORK_SECTION_CHANGE = 'WORK_CHANGE_DATA'
+  WORK_SECTION_CHANGE = 'WORK_CHANGE_DATA',
+  GLOBAL_DATA_CHANGE = 'GLOBAL_DATA_CHANGE'
 }
 
 export interface DataContextState {
@@ -36,6 +37,7 @@ export interface DataContextState {
     isActive: boolean;
     data: WorkData;
   };
+  globalData: GlobalData;
 }
 
 export type DataContextStateTypes = {

@@ -38,7 +38,7 @@ export const ContactComponent = () => {
             <div className="absolute top-40  lg:top-40 lg:left-20 left-0 right-0  md:left-20  w-full bg-white dark:bg-slate-900 rounded-md shadow-xl dark:shadow-gray-800 px-6 py-8">
               <Link href="/">
                 <Image
-                  src={state.contact.data.imageLogo}
+                  src={state.contact.data.imageLogo || ''}
                   width={72}
                   height={64}
                   className="mx-auto"

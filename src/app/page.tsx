@@ -5,35 +5,29 @@ import { ContactComponent } from "@/components/home/ContactComponent";
 import { AboutMeComponent } from "@/components/home/AboutMeComponent";
 import CompanyInfoComponent from "@/components/home/CompanyInfoComponent";
 import CarrouselComponent from "@/components/home/CarouselComponent";
+import { useDataContext } from "@/context/data-context/DataContext";
+import { DataContextActionTypes } from "@/context/data-context/types";
+import { mockGlobalData } from "@/utils/mock/mockData";
 
 
 export default function Index() {
+  const { state, dispatch } = useDataContext();
+
+  useEffect(() => {
+    dispatch({
+      type: DataContextActionTypes.GLOBAL_DATA_CHANGE,
+      payload: mockGlobalData()
+    })
+  }, [state])
+
   useEffect(() => {
     if (typeof window !== "undefined"){
       document.documentElement.setAttribute("dir", "ltr");
       document.documentElement.classList.add('light');
     }
   }, []);
-  const settings = {
-    container: '.tiny-two-item',
-    controls: true,
-    mouseDrag: true,
-    loop: true,
-    rewind: true,
-    autoplay: true,
-    autoplayButtonOutput: false,
-    autoplayTimeout: 3000,
-    navPosition: "bottom",
-    controlsText: ['<i class="mdi mdi-chevron-left"></i>', '<i class="mdi mdi-chevron-right"></i>'],
-    nav: false,
-    speed: 400,
-    gutter: 0,
-    responsive: {
-      768: {
-        items: 2
-      },
-    },
-  }
+
+
   return (
     <>
       <Banner/>

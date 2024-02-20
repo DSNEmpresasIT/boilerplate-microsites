@@ -22,6 +22,11 @@ export const reducer = (state: DataContextState, action: DataContextAction): Dat
         ...state,
         contact: action.payload
       }
+    case DataContextActionTypes.GLOBAL_DATA_CHANGE:
+      return {
+        ...state,
+        globalData: action.payload
+      }
     default:
       return state;
   }

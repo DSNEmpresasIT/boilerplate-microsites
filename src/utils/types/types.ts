@@ -1,23 +1,23 @@
 export interface IBanner {
-  title: string;
-  description: string;
-  useful_links: [{ name:string, url: string}];
-  video_link: string;
-  icon:string;
-  image_url: string[];
+  title?: string;
+  description?: string;
+  useful_links?: [{ name:string, url: string}];
+  video_link?: string;
+  icon?:string;
+  image_url?: string[];
 }
 
 export interface AboutComponent {
-  badge: string;
-  title: string;
-  description: string;
-  image_1: string;
-  image_2: string;
+  badge?: string;
+  title?: string;
+  description?: string;
+  image_1?: string;
+  image_2?: string;
 }
 
 export interface ContactComponent {
-  googleMapsSrc: string;
-  imageLogo: string;
+  googleMapsSrc?: string;
+  imageLogo?: string;
 }
 
 export interface FooterComponent {
@@ -41,10 +41,10 @@ export interface Webs {
 }
 
 export interface CarouselData {
-  id: number;
-  image: string;
-  title: string;
-  description: string;
+  id?: number;
+  image?: string;
+  title?: string;
+  description?: string;
 }
 
 export interface contactInformation {
@@ -52,30 +52,31 @@ export interface contactInformation {
   phone2?:string,
   adress?:string,
   mapUrl?: string,
+  schedule?: string, 
 }
 
 
 export interface CompanyInfoData {
-  headerTitle: string;
-  headerDesc: string;
-  companyInfoItems: CompanyInfoItems[];
+  headerTitle?: string;
+  headerDesc?: string;
+  companyInfoItems?: CompanyInfoItems[];
 }
 
 export interface CompanyInfoItems {
-  title: string;
-  desc: string;
-  image: string;
-  Icon: any;
+  title?: string;
+  desc?: string;
+  image?: string;
+  Icon?: any;
 }
 
 export interface WorkData {
-  headerTitle: string;
-  headerDesc: string;
-  workItems: WorkItems[];
+  headerTitle?: string;
+  headerDesc?: string;
+  workItems?: WorkItems[];
 } 
 
 export interface WorkItems {
-  title: string;
-  desc: string;
-  image: string;
+  title?: string;
+  desc?: string;
+  image?: string;
 }

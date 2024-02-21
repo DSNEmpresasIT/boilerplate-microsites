@@ -29,7 +29,7 @@ export const AboutMeComponent = () => {
               <div className="col-span-7">
                 <div className="grid grid-cols-1 gap-4">
                   <Image
-                    src={state.about.data.image_1}
+                    src={state.about.data.image_1 || ''}
                     width={0}
                     height={0}
                     sizes="100vw"
@@ -43,7 +43,7 @@ export const AboutMeComponent = () => {
               <div className="col-span-5">
                 <div className="grid grid-cols-1 gap-4">
                   <Image
-                    src={state.about.data.image_1}
+                    src={state.about.data.image_1 || ''}
                     width={0}
                     height={0}
                     sizes="100vw"
@@ -74,10 +74,9 @@ export const AboutMeComponent = () => {
               <div className="flex mt-6">
                 <PiMapPinLight className="text-indigo-600 text-4xl me-4 mt-2" />
                 <div className="">
-                  <h5 className="text-xl font-semibold mb-0">Location</h5>
+                  <h5 className="text-xl font-semibold mb-0">Ubicación</h5>
                   <p className="text-slate-400 mt-2">
-                    C/54 Northwest Freeway, <br /> Suite 558, Houston, <br />{" "}
-                    USA 485
+                    {state.globalData.contactInformation?.adress}
                   </p>
                 </div>
               </div>
@@ -87,7 +86,7 @@ export const AboutMeComponent = () => {
                 <div className="">
                   <h5 className="text-xl font-semibold mb-0">Time</h5>
                   <p className="text-slate-400 mt-2">
-                    October 11, 2022 <br /> 9:00A.M. - 12:00P.M.
+                    {state.globalData.contactInformation?.schedule}
                   </p>
                 </div>
               </div>

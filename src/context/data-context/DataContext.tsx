@@ -65,6 +65,23 @@ const initialState: DataContextState = {
         }
       ]
     }
+  },
+  globalData: {
+    webs: {
+      facebook: '',
+      instagram: '',
+      link1: '',
+      link2: '',
+      link3: '',
+      linkThree: ''
+    },
+    contactInformation: {
+      adress: '',
+      mapUrl: '',
+      phone1: '',
+      phone2: '',
+      schedule: ''
+    }
   }
 }
 

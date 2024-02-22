@@ -8,21 +8,11 @@ import WorkDataComponent from "./WorkDataComponent";
 import { useDataContext } from "@/context/data-context/DataContext";
 import { DataContextActionTypes } from "@/context/data-context/types";
 import { mockCompanyInfoData } from "@/utils/mock/mockData";
+import { useLoader } from "@/utils/hooks/useLoader";
 
 export default function CompanyInfoComponent() {
   const { state, dispatch } = useDataContext();
-
-  useEffect(() => {
-    dispatch({
-      type: DataContextActionTypes.COMPANY_SECTION_CHANGE,
-      payload: {
-        isActive: true,
-        data: mockCompanyInfoData()
-      }
-    })
-  }, [state])
-
-  return (
+  const { setIsLoading, Component } = useLoader(
     <div className="mb-10">
       <div className="container relative md:mt-24 mt-16">
         <div className="grid md:grid-cols-12 grid-cols-1 pb-8 items-center">
@@ -77,7 +67,22 @@ export default function CompanyInfoComponent() {
         </div>
       </div>
 
-      <WorkDataComponent />
+      {/* <WorkDataComponent /> */}
     </div>
+  );  
+
+  useEffect(() => {
+    dispatch({
+      type: DataContextActionTypes.COMPANY_SECTION_CHANGE,
+      payload: {
+        isActive: true,
+        data: mockCompanyInfoData()
+      }
+    })
+    setIsLoading(false)
+  }, [state])
+
+  return (
+    <>{Component}</>
   );
 }

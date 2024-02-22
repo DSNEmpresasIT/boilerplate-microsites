@@ -132,7 +132,7 @@ export default function FooterComponent() {
         <div className="container relative text-center">
           <div className="grid md:grid-cols-1">
             <p className="mb-0">
-              © {new Date().getFullYear()} Desarrollado por
+              © {new Date().getFullYear()} Desarrollado por{' '}
               <Link
                 href="https://dsnempresas.com.ar"
                 target="_blank"

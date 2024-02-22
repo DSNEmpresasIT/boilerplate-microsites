@@ -7,21 +7,11 @@ import * as Icon from "react-feather";
 import { useDataContext } from "@/context/data-context/DataContext";
 import { DataContextActionTypes } from "@/context/data-context/types";
 import { mockWorkData } from "@/utils/mock/mockData";
+import { useLoader } from "@/utils/hooks/useLoader";
 
 const WorkDataComponent = () => {
   const { state, dispatch } = useDataContext();
-
-  useEffect(() => {
-    dispatch({
-      type: DataContextActionTypes.WORK_SECTION_CHANGE,
-      payload: {
-        isActive: true,
-        data: mockWorkData()
-      }
-    })
-  }, [state])
-
-  return (
+  const { setIsLoading, Component } = useLoader(
     <div className="container relative md:mt-24 mt-16">
       <div className="grid grid-cols-1 pb-8 text-center">
         <h3 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">
@@ -68,6 +58,21 @@ const WorkDataComponent = () => {
           })}
       </div>
     </div>
+  )
+
+  useEffect(() => {
+    dispatch({
+      type: DataContextActionTypes.WORK_SECTION_CHANGE,
+      payload: {
+        isActive: true,
+        data: mockWorkData()
+      }
+    })
+    setIsLoading(false)
+  }, [state])
+
+  return (
+    <>{Component}</>
   );
 };
 

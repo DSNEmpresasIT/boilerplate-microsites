@@ -2,6 +2,7 @@
 import { useDataContext } from "@/context/data-context/DataContext";
 import { DataContextActionTypes } from "@/context/data-context/types";
 import { useBannerData } from "@/utils/hooks/dataHooks";
+import { useLoader } from "@/utils/hooks/useLoader";
 import { mockBannerData } from "@/utils/mock/mockData";
 import { IBanner } from "@/utils/types/types";
 import Image from "next/image";
@@ -9,18 +10,7 @@ import React, { useEffect } from "react";
 
 const BannerComponent = () => {
   const { state, dispatch } = useDataContext();
-  
-  useEffect(() => {
-    dispatch({
-      type: DataContextActionTypes.BANNER_SECTION_CHANGE,
-      payload: {
-        isActive: true,
-        data: mockBannerData()
-      }
-    })
-  }, [state])
-
-  return (
+  const { setIsLoading, Component } = useLoader(
     <>
       <section className="relative py-36 items-center">
         <div className="absolute top-0 start-0 w-full h-full z-0 pointer-events-none overflow-hidden">
@@ -69,6 +59,21 @@ const BannerComponent = () => {
         </div>
       </div>
     </>
+  )
+
+  useEffect(() => {
+    dispatch({
+      type: DataContextActionTypes.BANNER_SECTION_CHANGE,
+      payload: {
+        isActive: true,
+        data: mockBannerData()
+      }
+    })
+    setIsLoading(false);
+  }, [state])
+
+  return (
+    <>{Component}</>
   );
 };
 

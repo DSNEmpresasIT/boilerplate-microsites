@@ -14,27 +14,20 @@ import { EffectCoverflow, Pagination } from 'swiper/modules';
 import { useDataContext } from '@/context/data-context/DataContext';
 import { DataContextActionTypes } from '@/context/data-context/types';
 import { mockCarouselData } from '@/utils/mock/mockData';
+import { useLoader } from '@/utils/hooks/useLoader';
 
-export default function carouselComponent() {
+
+export default function CarouselComponent() {
   const { state, dispatch } = useDataContext();
 
-  useEffect(() => {
-    dispatch({
-      type: DataContextActionTypes.CAROUSEL_SECTION_CHANGE,
-      payload: {
-        isActive: true,
-        data: mockCarouselData()
-      }
-    })
-  }, [state])
 
   const initialSlide = (): number => {
-     if (state.carousel?.data.length <= 0){
+    if (state.carousel?.data.length <= 0){
       return 4
     } else return state.carousel?.data.length/2
   }
 
-  return (
+  const { setIsLoading, Component } = useLoader(
     <div className='flex justify-center  mb-40'>
       <Swiper
         effect={'coverflow'}
@@ -60,5 +53,20 @@ export default function carouselComponent() {
         ))} 
       </Swiper>
     </div>
+  )
+
+  useEffect(() => {
+    dispatch({
+      type: DataContextActionTypes.CAROUSEL_SECTION_CHANGE,
+      payload: {
+        isActive: true,
+        data: mockCarouselData()
+      }
+    })
+    setIsLoading(false)
+  }, [state])
+
+  return (
+    <>{Component}</>
   );
 }

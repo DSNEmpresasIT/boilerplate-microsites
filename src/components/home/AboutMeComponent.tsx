@@ -5,22 +5,11 @@ import Image from "next/image";
 import { useDataContext } from "@/context/data-context/DataContext";
 import { DataContextActionTypes, DataContextStateTypes } from "@/context/data-context/types";
 import { mockAboutData } from "@/utils/mock/mockData";
+import { useLoader } from "@/utils/hooks/useLoader";
 
 export const AboutMeComponent = () => {
   const { state, dispatch }:DataContextStateTypes = useDataContext()
-
-  useEffect(() => {
-    // Here we can use a custom service but for now we gonna use the mock data
-    dispatch({
-      type: DataContextActionTypes.ABOUT_SECTION_CHANGE,
-      payload: {
-        isActive: true,
-        data: mockAboutData()
-      }
-    })
-  }, [])
-
-  return (
+  const { setIsLoading, Component } = useLoader(
     <section className="relative md:py-24 py-16">
       <div className="container relative">
         <div className="grid md:grid-cols-12 grid-cols-1 items-center gap-[30px]">
@@ -94,7 +83,22 @@ export const AboutMeComponent = () => {
           </div>
         </div>
       </div>
-
     </section>
+  )
+
+  useEffect(() => {
+    // Here we can use a custom service but for now we gonna use the mock data
+    dispatch({
+      type: DataContextActionTypes.ABOUT_SECTION_CHANGE,
+      payload: {
+        isActive: true,
+        data: mockAboutData()
+      }
+    })
+    setIsLoading(false)
+  }, [state.about])
+
+  return (
+      <>{Component}</>
   );
 };

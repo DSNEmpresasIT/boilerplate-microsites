@@ -1,6 +1,7 @@
 import { useDataContext } from "@/context/data-context/DataContext";
 import { DataContextActionTypes } from "@/context/data-context/types";
 import { useContactData } from "@/utils/hooks/dataHooks";
+import { useLoader } from "@/utils/hooks/useLoader";
 import { mockContactData } from "@/utils/mock/mockData";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,18 +10,7 @@ import * as Icon from "react-feather";
 
 export const ContactComponent = () => {
   const { state, dispatch } = useDataContext();
-
-  useEffect(() => {
-    dispatch({
-      type: DataContextActionTypes.CONTACT_SECTION_CHANGE,
-      payload: {
-        isActive: true,
-        data: mockContactData()
-      }
-    })
-  }, [state])
-
-  return (
+  const { setIsLoading, Component } = useLoader(
     <section className="overflow-hidden">
       <div className="container-fluid relative">
         <div className="grid md:grid-cols-1">
@@ -138,5 +128,20 @@ export const ContactComponent = () => {
         </div>
       </div>
     </section>
+  )
+
+  useEffect(() => {
+    dispatch({
+      type: DataContextActionTypes.CONTACT_SECTION_CHANGE,
+      payload: {
+        isActive: true,
+        data: mockContactData()
+      }
+    })
+    setIsLoading(false)
+  }, [state])
+
+  return (
+    <>{Component}</>
   );
 };

@@ -16,9 +16,12 @@ import {
 import { PiShoppingCart } from "react-icons/pi";
 import { FooterComponent } from "@/utils/types/types";
 import { useFooterData } from "@/utils/hooks/dataHooks";
+import { DataContextStateTypes } from "@/context/data-context/types";
+import { useDataContext } from "@/context/data-context/DataContext";
 
 export default function FooterComponent() {
   const { data, loading } = useFooterData();
+  const { state, dispatch }:DataContextStateTypes = useDataContext()
 
   return (
     <footer className="footer bg-dark-footer relative text-gray-200 dark:text-gray-200">
@@ -29,7 +32,7 @@ export default function FooterComponent() {
               <div className="grid grid-cols-1">
                 <div className="text-center">
                   <Image
-                    src="/images/logo-icon-80.png"
+                    src={state.globalData.logoLight || ''}
                     width={50}
                     height={50}
                     className="block mx-auto"

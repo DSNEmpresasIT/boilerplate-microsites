@@ -4,10 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import * as Icon from "react-feather";
+import { DataContextStateTypes } from "@/context/data-context/types";
+import { useDataContext } from "@/context/data-context/DataContext";
 
 export default function HeaderComponent({ navClass, navJustify }: { navClass?: string, navJustify?: string }) {
   const [isMenu, setisMenu] = useState(false);
   const [navbarTop, setNavbarTop] = useState(false);
+  const { state, dispatch }:DataContextStateTypes = useDataContext()
 
   const toggleMenu = () => {
     setisMenu(!isMenu);
@@ -144,14 +147,14 @@ export default function HeaderComponent({ navClass, navJustify }: { navClass?: s
             <Link href="/" className="logo">
               <span className="inline-block dark:hidden">
                 <Image
-                  src="/images/logo-dark.png"
+                  src={state.globalData.logoDark || ''}
                   className="l-dark"
                   height={24}
                   width={138}
                   alt=""
                 />
                 <Image
-                  src="/images/logo-light.png"
+                  src={state.globalData.logoLight || ''}
                   className="l-light"
                   height={24}
                   width={138}
@@ -159,7 +162,7 @@ export default function HeaderComponent({ navClass, navJustify }: { navClass?: s
                 />
               </span>
               <Image
-                src="/images/logo-light.png"
+                src={state.globalData.logoLight || ''}
                 height={24}
                 width={138}
                 className="hidden dark:inline-block"
@@ -169,14 +172,14 @@ export default function HeaderComponent({ navClass, navJustify }: { navClass?: s
           ) : (
             <Link href="/" className="logo">
               <Image
-                src="/images/logo-dark.png"
+                src={state.globalData.logoDark || ''}
                 height={24}
                 width={138}
                 className="inline-block dark:hidden"
                 alt=""
               />
               <Image
-                src="/images/logo-light.png"
+                src={state.globalData.logoLight || ''}
                 height={24}
                 width={138}
                 className="hidden dark:inline-block"

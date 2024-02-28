@@ -60,22 +60,22 @@ export const mockCarouselData = () :CarouselData[]=> [
 
 export const mockAboutData = ():AboutComponent => {
   return {
-    badge: 'badge',
-    title: 'title',
-    description: 'description',
-    image_1: "/images/event/1.jpg",
-    image_2: "/images/event/2.jpg",
+    badge: 'Líder en Faena Bovina',
+    title: 'Frigorífico El Brillante SRL',
+    description: 'El Brillante es un frigorífico líder en la provincia de Entre Ríos, Argentina, con más de 30 años de experiencia en la faena de ganado bovino. Reconocido por su compromiso con la calidad y la innovación, El Brillante se destaca por su infraestructura moderna, sus procesos certificados y su enfoque en la exportación de productos cárnicos. Ubicado estratégicamente en la región agropecuaria del litoral argentino, El Brillante ofrece un amplio abanico de productos y servicios, respaldados por un equipo profesional altamente capacitado y una sólida trayectoria en el mercado nacional e internacional.',
+    image_1: "/images/images-ElBrillante/elbrillante-1.jpeg",
+    image_2: "/images/images-ElBrillante/elbrillante-2.jpeg",
   }
 }
 
 
 export const mockBannerData = ():IBanner => {
   return {
-    title: 'El Brillante',
-    description: 'Coworking spaces offer a wealth of advantages for self starters, including networking opportunities, daily structure, and increased productivity.',
+    title: 'Frigorífico El Brillante SRL',
+    description: 'Líder en la faena de ganado bovino en Entre Ríos, Argentina. Más de 30 años de excelencia en la industria cárnica.',
     useful_links: [{name:'nombre', url: 'url'}],
-    video_link: 'https://www.youtube.com/embed/JsNvHJsufhI?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1',
-    icon:'/images/logo-icon-64.png',
+    video_link: 'https://www.youtube.com/embed/y-NDLn95Hgs?si=vOMk_Rra0rRuJ6Vo&amp;start=9',
+    icon:'/images/images-ElBrillante/logoDark.png',
     image_url: ['image_url'],
   }
 }
@@ -111,7 +111,7 @@ export const mockCompanyInfoData = ():CompanyInfoData => {
 export const mockContactData = ():ContactComponent => {
   return {
     googleMapsSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13622.329221377997!2d-58.02625848261718!3d-31.398078899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95ade8040a01d287%3A0x4705fab9fcbdf5a2!2sDsn%20Empresas!5e0!3m2!1ses!2sar!4v1703631288199!5m2!1ses!2sar',
-    imageLogo: '/images/logo-icon-64.png',
+    imageLogo: '/images/images-ElBrillante/logoLight.png',
   }
 }
 
@@ -156,6 +156,8 @@ export const mockFooterData = ():FooterComponent => {
 
 export const mockGlobalData = ():GlobalData => {
   return {
+    logoDark: '/images/images-ElBrillante/logoDark.png',
+    logoLight: '/images/images-ElBrillante/logoLight.png',
     webs: {
       facebook: 'facebook',
       instagram: 'instagram',
@@ -167,7 +169,7 @@ export const mockGlobalData = ():GlobalData => {
     contactInformation: {
       phone1: 'phone1',
       phone2: 'phone2',
-      adress: 'adress',
+      adress: 'Provincia de Entre Ríos, Argentina.',
       mapUrl: 'mapUrl',
       schedule: 'Schedule'
     },

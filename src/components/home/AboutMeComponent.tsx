@@ -32,7 +32,7 @@ export const AboutMeComponent = () => {
               <div className="col-span-5">
                 <div className="grid grid-cols-1 gap-4">
                   <Image
-                    src={state.about.data.image_1 || ''}
+                    src={state.about.data.image_2 || ''}
                     width={0}
                     height={0}
                     sizes="100vw"

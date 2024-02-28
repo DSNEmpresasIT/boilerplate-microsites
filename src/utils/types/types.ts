@@ -27,8 +27,10 @@ export interface FooterComponent {
 }
 
 export interface GlobalData { 
-  webs?: Webs
-  contactInformation?: contactInformation
+  logoLight?: string;
+  logoDark?: string;
+  webs?: Webs;
+  contactInformation?: contactInformation;
 }
 
 export interface Webs {

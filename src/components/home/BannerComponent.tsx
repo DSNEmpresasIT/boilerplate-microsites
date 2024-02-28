@@ -4,7 +4,6 @@ import { DataContextActionTypes } from "@/context/data-context/types";
 import { useBannerData } from "@/utils/hooks/dataHooks";
 import { useLoader } from "@/utils/hooks/useLoader";
 import { mockBannerData } from "@/utils/mock/mockData";
-import { IBanner } from "@/utils/types/types";
 import Image from "next/image";
 import React, { useEffect } from "react";
 
@@ -15,7 +14,7 @@ const BannerComponent = () => {
       <section className="relative py-36 items-center">
         <div className="absolute top-0 start-0 w-full h-full z-0 pointer-events-none overflow-hidden">
           <iframe
-            src={state.banner.data?.video_link}
+            src={`${state.banner.data?.video_link}&controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1`}
             className="absolute top-1/2 start-1/2 ltr:-translate-x-1/2 rtl:translate-x-1/2 -translate-y-1/2 w-screen h-[56.25vw] min-h-screen min-w-[177.77vw]"
             title="Embedded YouTube Video"
           ></iframe>

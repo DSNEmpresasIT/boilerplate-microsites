@@ -73,8 +73,8 @@ export const mockBannerData = ():IBanner => {
   return {
     title: 'El Brillante',
     description: 'Coworking spaces offer a wealth of advantages for self starters, including networking opportunities, daily structure, and increased productivity.',
-    useful_links: [{name:'nombre', url: 'url'}],
-    video_link: 'https://www.youtube.com/embed/JsNvHJsufhI?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1',
+    useful_links: [{label:'nombre', link: 'url'}],
+    video_link: 'https://www.youtube.com/embed/JsNvHJsufhI?start=0',
     icon:'/images/logo-icon-64.png',
     image_url: ['image_url'],
   }

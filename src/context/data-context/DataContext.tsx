@@ -12,7 +12,7 @@ const initialState: DataContextState = {
       image_url: [''],
       title: '',
       useful_links: [
-        { name: '', url: '' }
+        { label: '', link: '' }
       ],
       video_link: '',
     }

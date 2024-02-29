@@ -6,6 +6,7 @@ import { useDataContext } from "@/context/data-context/DataContext";
 import { DataContextActionTypes, DataContextStateTypes } from "@/context/data-context/types";
 import { mockAboutData } from "@/utils/mock/mockData";
 import { useLoader } from "@/utils/hooks/useLoader";
+import Link from "next/link";
 
 export const AboutMeComponent = () => {
   const { state, dispatch }:DataContextStateTypes = useDataContext()
@@ -59,6 +60,7 @@ export const AboutMeComponent = () => {
               <p className="text-slate-400 max-w-xl mb-6">
                 {state.about.data.description}
               </p>
+              <a download className="flex text-xl" href={'/dowload/listaprecios.pdf'} >Descargue Lista de precios aquí<span className="ps-2"><svg  width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"><path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 9l-5 5-5-5M12 12.8V2.5"></path></svg></span></a>
 
               <div className="flex mt-6">
                 <PiMapPinLight className="text-indigo-600 text-4xl me-4 mt-2" />
@@ -73,7 +75,7 @@ export const AboutMeComponent = () => {
               <div className="flex mt-6">
                 <GoClock className="text-indigo-600 text-3xl me-4 mt-2" />
                 <div className="">
-                  <h5 className="text-xl font-semibold mb-0">Time</h5>
+                  <h5 className="text-xl font-semibold mb-0">Horario</h5>
                   <p className="text-slate-400 mt-2">
                     {state.globalData.contactInformation?.schedule}
                   </p>

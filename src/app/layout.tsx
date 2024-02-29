@@ -45,11 +45,11 @@ const alex = Alex_Brush({
 
 export const metadata = {
   title: {
-    default: 'DSN | Microsite',
-    template: '%s | DSN'
+    default: 'Frigorífico El Brillante |',
+    template: '%s | Frigorífico El Brillante'
   },
-  description: 'Microsite template for DSN microsites',
-  keywords: 'Microsite, DSN, NextJS, ReactJS, TailwindCSS, Typescript, SEO, Microsite template, Microsite template for DSN',
+  description: 'Sitio web del Frigorífico El Brillante, líder en la provincia de Entre Ríos, Argentina, con más de 30 años de experiencia en la faena de ganado bovino. Reconocido por su compromiso con la calidad y la innovación.',
+  keywords: 'Frigorífico El Brillante, carne bovina, carne porcina, carne ovina, exportación, Entre Ríos, Argentina, faena de ganado, calidad, innovación',
   themeColor: 'white',
   icon:{
     icon: '/favicon.ico',

@@ -15,14 +15,14 @@ export default function CompanyInfoComponent() {
   const { setIsLoading, Component } = useLoader(
     <div className="mb-10">
       <div className="container relative md:mt-24 mt-16">
-        <div className="grid md:grid-cols-12 grid-cols-1 pb-8 items-center">
-          <div className="md:col-span-6">
+        <div className=" pb-8 items-center">
+          <div className="">
             <h3 className="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">
               {state.companyInfo.data?.headerTitle}
             </h3>
           </div>
 
-          <div className="md:col-span-6">
+          <div className="">
             <p className="text-slate-400 max-w-xl">{state.companyInfo.data?.headerDesc}</p>
           </div>
         </div>
@@ -34,15 +34,15 @@ export default function CompanyInfoComponent() {
               return (
                 <div
                   key={index}
-                  className="group rounded-md shadow-md dark:shadow-gray-800 relative overflow-hidden"
+                  className="group min-h-96 rounded-md shadow-md dark:shadow-gray-800 relative overflow-hidden"
                 >
                   <Image
                     src={item.image}
                     width={0}
                     height={0}
                     sizes="100vw"
-                    style={{ width: "100%", height: "auto" }}
-                    className=""
+                    style={{ width: "100%", height: "100%",  }}
+                    className="object-cover"
                     alt=""
                   />
                   <div className="absolute inset-0 bg-gradient-to-t to-transparent via-slate-900/60 group-hover:via-slate-900/40 from-slate-900 top-3/4 group-hover:top-0 transition-all duration-500"></div>
@@ -59,6 +59,7 @@ export default function CompanyInfoComponent() {
                       <p className="text-white/50 hidden group-hover:block transition-all duration-500 ease-in-out mt-4">
                         {item.desc}
                       </p>
+
                     </div>
                   </div>
                 </div>

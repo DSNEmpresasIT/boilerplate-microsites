@@ -1,7 +1,7 @@
 export interface IBanner {
   title?: string;
   description?: string;
-  useful_links?: [{ name:string, url: string}];
+  useful_links?: [{ label:string, link: string}];
   video_link?: string;
   icon?:string;
   image_url?: string[];

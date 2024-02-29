@@ -20,7 +20,6 @@ import { useLoader } from '@/utils/hooks/useLoader';
 export default function CarouselComponent() {
   const { state, dispatch } = useDataContext();
 
-
   const initialSlide = (): number => {
     if (state.carousel?.data.length <= 0){
       return 4

@@ -1,4 +1,4 @@
-import { AboutComponent, CarouselData, CompanyInfoData, ContactComponent, GlobalData, IBanner, WorkData } from "@/utils/types/types";
+import { AboutComponent, CarouselData, CompanyInfoData, ContactComponent, FooterComponent, GlobalData, IBanner, WorkData } from "@/utils/types/types";
 import { Dispatch } from "react";
 
 export enum DataContextActionTypes {
@@ -9,7 +9,8 @@ export enum DataContextActionTypes {
   CAROUSEL_SECTION_CHANGE = 'CAROUSEL_CHANGE_DATA',
   COMPANY_SECTION_CHANGE =  'COMPANY_CHANGE_DATA',
   WORK_SECTION_CHANGE = 'WORK_CHANGE_DATA',
-  GLOBAL_DATA_CHANGE = 'GLOBAL_DATA_CHANGE'
+  GLOBAL_DATA_CHANGE = 'GLOBAL_DATA_CHANGE',
+  FOOTER_SECTION_CHANGE = 'FOOTER_SECTION_CHANGE'
 }
 
 export interface DataContextState {
@@ -32,6 +33,10 @@ export interface DataContextState {
   companyInfo: {
     isActive: boolean;
     data: CompanyInfoData;
+  };
+  footerData: {
+    isActive: boolean;
+    data: FooterComponent;
   };
   workData: {
     isActive: boolean;

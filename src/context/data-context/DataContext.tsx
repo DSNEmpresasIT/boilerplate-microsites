@@ -28,7 +28,8 @@ const initialState: DataContextState = {
     }},
   carousel:{ 
     isActive: true,
-    data: []
+    data: [
+    ]
   }, 
   companyInfo:  { 
     isActive: true,
@@ -64,6 +65,14 @@ const initialState: DataContextState = {
           image: ''
         }
       ]
+    }
+  },
+  footerData: {
+    isActive: true,
+    data: {
+      title: '',
+      description: '',
+      img:'',
     }
   },
   globalData: {

@@ -1,6 +1,5 @@
 import { useDataContext } from "@/context/data-context/DataContext";
 import { DataContextActionTypes } from "@/context/data-context/types";
-import { useContactData } from "@/utils/hooks/dataHooks";
 import { useLoader } from "@/utils/hooks/useLoader";
 import { mockContactData } from "@/utils/mock/mockData";
 import Image from "next/image";

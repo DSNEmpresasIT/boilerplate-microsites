@@ -27,6 +27,11 @@ export const reducer = (state: DataContextState, action: DataContextAction): Dat
         ...state,
         globalData: action.payload
       }
+    case DataContextActionTypes.FOOTER_SECTION_CHANGE:
+      return {
+        ...state,
+        footerData: action.payload
+      }
     default:
       return state;
   }

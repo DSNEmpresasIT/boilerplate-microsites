@@ -1,7 +1,6 @@
 "use client";
 import { useDataContext } from "@/context/data-context/DataContext";
 import { DataContextActionTypes } from "@/context/data-context/types";
-import { useBannerData } from "@/utils/hooks/dataHooks";
 import { useLoader } from "@/utils/hooks/useLoader";
 import { mockBannerData } from "@/utils/mock/mockData";
 import Image from "next/image";

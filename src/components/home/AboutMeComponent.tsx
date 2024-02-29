@@ -17,7 +17,7 @@ export const AboutMeComponent = () => {
           <div className="md:col-span-6">
             <div className="grid grid-cols-12 gap-4 items-center">
               <div className="col-span-7">
-                <div className="grid grid-cols-1 gap-4">
+                <div className="grid grid-cols-1 gap-4 " >
                   <Image
                     src={state.about.data.image_1 || ''}
                     width={0}
@@ -31,7 +31,7 @@ export const AboutMeComponent = () => {
               </div>
 
               <div className="col-span-5">
-                <div className="grid grid-cols-1 gap-4">
+                <div className="grid grid-cols-1 gap-4 ">
                   <Image
                     src={state.about.data.image_2 || ''}
                     width={0}
@@ -42,7 +42,17 @@ export const AboutMeComponent = () => {
                     alt=""
                   />
 
-                  <div className="w-28 transitionImage h-28 bg-indigo-600/10 rounded-lg"></div>
+                  <div className="w-28 transitionImage h-28 ">
+                  <Image
+                    src={state.about.data.image_3 || ''}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    style={{ width: "100%"}}
+                    className="shadow transitionImage max-h-40 rounded-lg"
+                    alt=""
+                  />
+                  </div>
                 </div>
               </div>
             </div>

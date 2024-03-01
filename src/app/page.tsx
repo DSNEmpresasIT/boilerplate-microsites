@@ -18,7 +18,7 @@ export default function Index() {
       type: DataContextActionTypes.GLOBAL_DATA_CHANGE,
       payload: mockGlobalData()
     })
-  }, [state])
+  }, [])
 
   useEffect(() => {
     if (typeof window !== "undefined"){

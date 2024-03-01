@@ -146,45 +146,61 @@ export default function HeaderComponent({ navClass, navJustify }: { navClass?: s
           {navClass === "nav-light" ? (
             <Link href="/" className="logo">
               <span className="inline-block dark:hidden">
-                <Image
-                  src={state.globalData.logoDark || ''}
-                  className="l-dark"
-                  height={24}
-                  width={138}
-                  alt=""
-                />
-                <Image
-                  src={state.globalData.logoLight || ''}
-                  className="l-light"
-                  height={24}
-                  width={138}
-                  alt=""
-                />
+               {
+                (state.globalData.logoDark || state.globalData.logoLight)  && (
+                  <>
+                    <Image
+                      src={state.globalData.logoDark || ''}
+                      className="l-dark"
+                      height={24}
+                      width={138}
+                      alt=""
+                    />
+                    <Image
+                      src={state.globalData.logoLight || ''}
+                      className="l-light"
+                      height={24}
+                      width={138}
+                      alt=""
+                    />
+                  </>
+                )
+               }
               </span>
-              <Image
-                src={state.globalData.logoLight || ''}
-                height={24}
-                width={138}
-                className="hidden dark:inline-block"
-                alt=""
-              />
+              {
+                (state.globalData.logoLight) && (
+                  <Image
+                    src={state.globalData.logoLight}
+                    height={24}
+                    width={138}
+                    className="hidden dark:inline-block"
+                    alt=""
+                  />
+                 )
+              }
             </Link>
           ) : (
             <Link href="/" className="logo">
-              <Image
-                src={state.globalData.logoDark || ''}
-                height={24}
-                width={138}
-                className="inline-block dark:hidden"
-                alt=""
-              />
-              <Image
-                src={state.globalData.logoLight || ''}
-                height={24}
-                width={138}
-                className="hidden dark:inline-block"
-                alt=""
-              />
+              {
+                (state.globalData.logoDark || state.globalData.logoLight)  && (
+                  <>
+                    <Image
+                      src={state.globalData.logoDark || ''}
+                      height={24}
+                      width={138}
+                      className="inline-block dark:hidden"
+                      alt=""
+                    />
+                    <Image
+                      src={state.globalData.logoLight || ''}
+                      height={24}
+                      width={138}
+                      className="hidden dark:inline-block"
+                      alt=""
+                    />
+                  </>
+                )
+              }
             </Link>
           )}
 

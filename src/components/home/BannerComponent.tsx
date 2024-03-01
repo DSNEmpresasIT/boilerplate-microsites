@@ -69,7 +69,7 @@ const BannerComponent = () => {
       }
     })
     setIsLoading(false);
-  }, [state])
+  }, [])
 
   return (
     <>{Component}</>

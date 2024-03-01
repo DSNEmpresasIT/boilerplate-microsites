@@ -139,7 +139,7 @@ export const ContactComponent = () => {
       }
     })
     setIsLoading(false)
-  }, [state])
+  }, [])
 
   return (
     <>{Component}</>

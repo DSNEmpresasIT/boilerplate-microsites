@@ -64,7 +64,7 @@ export default function CarouselComponent() {
       }
     })
     setIsLoading(false)
-  }, [state])
+  }, [])
 
   return (
     <>{Component}</>

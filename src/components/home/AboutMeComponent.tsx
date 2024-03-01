@@ -60,7 +60,7 @@ export const AboutMeComponent = () => {
               <p className="text-slate-400 max-w-xl mb-6">
                 {state.about.data.description}
               </p>
-              <a download className="flex text-xl" href={'/dowload/listaprecios.pdf'} >Descargue Lista de precios aquí<span className="ps-2"><svg  width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" stroke-width="2" stroke-linecap="square" stroke-linejoin="arcs"><path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 9l-5 5-5-5M12 12.8V2.5"></path></svg></span></a>
+              <a download className="flex text-xl" href={'/dowload/listaprecios.pdf'} >Descargue Lista de precios aquí<span className="ps-2"><svg  width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="square" ><path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 9l-5 5-5-5M12 12.8V2.5"></path></svg></span></a>
 
               <div className="flex mt-6">
                 <PiMapPinLight className="text-indigo-600 text-4xl me-4 mt-2" />
@@ -98,7 +98,7 @@ export const AboutMeComponent = () => {
       }
     })
     setIsLoading(false)
-  }, [state.about])
+  }, [])
 
   return (
       <>{Component}</>

@@ -33,7 +33,7 @@ const WorkDataComponent = () => {
                   <Icon.Hexagon className="h-32 w-32 fill-indigo-600/5 mx-auto"></Icon.Hexagon>
                   <div className="absolute top-2/4 -translate-y-2/4 start-0 end-0 mx-auto text-indigo-600 rounded-xl transition-all duration-500 ease-in-out text-4xl flex align-middle justify-center items-center">
                     <Image
-                      src={item.image}
+                      src={item.image || ''}
                       width={56}
                       height={56}
                       className="w-14 h-14"
@@ -69,7 +69,7 @@ const WorkDataComponent = () => {
       }
     })
     setIsLoading(false)
-  }, [state])
+  }, [])
 
   return (
     <>{Component}</>

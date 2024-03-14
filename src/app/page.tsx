@@ -9,7 +9,6 @@ import { useDataContext } from "@/context/data-context/DataContext";
 import { DataContextActionTypes } from "@/context/data-context/types";
 import { mockGlobalData } from "@/utils/mock/mockData";
 
-
 export default function Index() {
   const { state, dispatch } = useDataContext();
 
@@ -18,7 +17,7 @@ export default function Index() {
       type: DataContextActionTypes.GLOBAL_DATA_CHANGE,
       payload: mockGlobalData()
     })
-  }, [state])
+  }, [])
 
   useEffect(() => {
     if (typeof window !== "undefined"){

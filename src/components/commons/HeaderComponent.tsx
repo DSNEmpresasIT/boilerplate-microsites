@@ -173,7 +173,7 @@ export default function HeaderComponent({ navClass, navJustify }: { navClass?: s
           ) : (
             <Link href="/" className="logo">
               <Image
-                src={state.globalData.logoDark || ''}
+                src={state.globalData.logoLight || ''}
                 height={24}
                 width={138}
                 className="inline-block dark:hidden max-h-20 object-contain max-w-20 "

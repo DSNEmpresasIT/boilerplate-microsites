@@ -37,7 +37,7 @@ export default function CompanyInfoComponent() {
                   className="group min-h-96 rounded-md shadow-md dark:shadow-gray-800 relative overflow-hidden"
                 >
                   <Image
-                    src={item.image}
+                    src={item.image || ''}
                     width={0}
                     height={0}
                     sizes="100vw"
@@ -81,7 +81,7 @@ export default function CompanyInfoComponent() {
       }
     })
     setIsLoading(false)
-  }, [state])
+  }, [])
 
   return (
     <>{Component}</>

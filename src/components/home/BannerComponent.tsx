@@ -29,7 +29,7 @@ const BannerComponent = () => {
               src={state.banner.data?.icon ?? "/images/logo-icon-64.png"}
               width={82}
               height={80}
-              className="block mx-auto animate-[spin_10s_linear_infinite]"
+              className="block mx-auto "
               alt=""
             />
             <h3 className="font-bold lg:leading-normal leading-normal text-4xl lg:text-5xl mb-5 mt-10 text-white">
@@ -68,7 +68,7 @@ const BannerComponent = () => {
       }
     })
     setIsLoading(false);
-  }, [state])
+  }, [])
 
   return (
     <>{Component}</>

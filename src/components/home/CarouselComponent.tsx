@@ -15,15 +15,18 @@ import { useDataContext } from '@/context/data-context/DataContext';
 import { DataContextActionTypes } from '@/context/data-context/types';
 import { mockCarouselData } from '@/utils/mock/mockData';
 import { useLoader } from '@/utils/hooks/useLoader';
+import { CarouselData } from '@/utils/types/types';
 
 
 export default function CarouselComponent() {
   const { state, dispatch } = useDataContext();
+  
+  const [ data, setData ] = useState<CarouselData[]>([]);
 
   const initialSlide = (): number => {
-    if (state.carousel?.data.length <= 0){
+    if (data.length <= 0){
       return 4
-    } else return state.carousel?.data.length/2
+    } else return data.length/2
   }
 
   const { setIsLoading, Component } = useLoader(
@@ -43,11 +46,11 @@ export default function CarouselComponent() {
         pagination={true}
         initialSlide={initialSlide()}
         modules={[EffectCoverflow, Pagination]}
-        className="mySwiper"
+        className='w-[336px] h-[400px] md:h-full md:w-full rounded-lg' 
       >
-        {state.carousel?.data?.map((item) => (
-          <SwiperSlide key={item.id}>
-            <img src={item.image} />
+        {data.map((item) => (
+          <SwiperSlide  key={item.id}>
+            <img className='w-full h-full' src={item.image} />
           </SwiperSlide>
         ))} 
       </Swiper>
@@ -62,8 +65,9 @@ export default function CarouselComponent() {
         data: mockCarouselData()
       }
     })
+    setData(mockCarouselData())
     setIsLoading(false)
-  }, [state])
+  }, [])
 
   return (
     <>{Component}</>

@@ -42,7 +42,7 @@ export default function FooterComponent() {
               <div className="grid grid-cols-1">
                 <div className="text-center">
                   <Image
-                    src={state.globalData.logoLight || ''}
+                    src={state.globalData.logoLight || "/images/logo-icon-64.png"}
                     width={50}
                     height={50}
                     className="block mx-auto"

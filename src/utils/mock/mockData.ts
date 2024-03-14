@@ -44,7 +44,7 @@ export const mockBannerData = ():IBanner => {
   return {
     title: 'Frigorífico El Brillante SRL',
     description: 'Líder en la faena de ganado bovino en Entre Ríos, Argentina. Más de 30 años de excelencia en la industria cárnica.',
-    video_link: 'https://www.youtube.com/embed/y-NDLn95Hgs?si=vOMk_Rra0rRuJ6Vo&amp;start=9',
+    video_link: 'https://www.youtube.com/embed/6zMOboDhm24?si=S5quNioQpfw9Cosk&amp;start=15',
     icon:'/images/images-ElBrillante/logoDark.png',
     useful_links: [{label:'nombre', link: 'url'}],
     image_url: ['image_url'],
@@ -60,19 +60,19 @@ export const mockCompanyInfoData = ():CompanyInfoData => {
         {
             image: "/images/images-ElBrillante/instalaciones.jpg",
             title: "Instalaciones del Frigorífico",
-            desc: "Esta imagen muestra las extensas instalaciones del Frigorífico El Brillante ubicado en la provincia de Entre Ríos, Argentina. Con una superficie total de 20 hectáreas y más de 1780 m2 construidos, el frigorífico cuenta con infraestructura moderna y bien equipada para la faena de ganado bovino, porcino y ovino.",
+            desc: "Ubicado en la provincia de Entre Ríos, Argentina. Con una superficie total de 20 hectáreas y más de 1780 m2 construidos, el frigorífico cuenta con infraestructura moderna y bien equipada para la faena de ganado bovino, porcino y ovino.",
             Icon: Icon.Headphones
         },
         {
             image: "/images/images-ElBrillante/procesoDeFaena.jpg",
             title: "Proceso de Faena",
-            desc: " Esta imagen ilustra el proceso de faena en el Frigorífico El Brillante. Con una capacidad de faena de 90 animales diarios en un turno de 9 horas, la planta frigorífica opera con eficiencia y precisión para garantizar la calidad y seguridad de sus productos cárnicos.",
+            desc: "Con una capacidad de faena de 90 animales diarios en un turno de 9 horas, la planta frigorífica opera con eficiencia y precisión para garantizar la calidad y seguridad de sus productos cárnicos.",
             Icon: Icon.GitMerge
         },
         {
-            image: "/images/images-ElBrillante/productoTerminado.png",
+            image: "/images/images-ElBrillante/productoTerminado.jpg",
             title: "Producto Terminado",
-            desc: " Esta imagen presenta los productos cárnicos terminados y listos para su distribución en el mercado nacional e internacional. El Frigorífico El Brillante se destaca por su compromiso con la calidad y la innovación en la industrialización de la producción, ofreciendo una amplia gama de cortes de carne bovina, porcina y ovina, así como menudencias y productos elaborados.",
+            desc: "El Frigorífico El Brillante se destaca por su compromiso con la calidad y la innovación en la industrialización de la producción, ofreciendo una amplia gama de cortes de carne bovina, porcina y ovina, así como menudencias y productos elaborados.",
             Icon: Icon.Sun
         }
     ]

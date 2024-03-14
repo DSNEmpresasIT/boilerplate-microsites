@@ -44,7 +44,7 @@ export const mockBannerData = ():IBanner => {
   return {
     title: 'Frigorífico El Brillante SRL',
     description: 'Líder en la faena de ganado bovino en Entre Ríos, Argentina. Más de 30 años de excelencia en la industria cárnica.',
-    video_link: 'https://www.youtube.com/embed/6zMOboDhm24?si=S5quNioQpfw9Cosk&amp;start=15',
+    video_link: 'https://www.youtube.com/embed/5MQ5Z2biL9k?si=WpuRyynXgJV9baEA',
     icon:'/images/images-ElBrillante/logoDark.png',
     useful_links: [{label:'nombre', link: 'url'}],
     image_url: ['image_url'],

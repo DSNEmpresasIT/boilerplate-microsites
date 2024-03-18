@@ -38,6 +38,8 @@ const BannerComponent = () => {
             <p className="text-slate-300 text-lg max-w-2xl mx-auto">
               {state.banner.data?.description}
             </p>
+            <a download className="flex text-2xl mx-auto text-white mt-2 hover:text-indigo-600 dark:hover:text-indigo-600" href={'/dowload/listaprecios.pdf'} >Descargue Lista de precios aquí<span className="ps-2"><svg  width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="square" ><path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 9l-5 5-5-5M12 12.8V2.5"></path></svg></span></a>
+
           </div>
         </div>
       </section>

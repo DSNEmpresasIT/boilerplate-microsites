@@ -24,11 +24,7 @@ export default function CarouselComponent() {
   
   const [ data, setData ] = useState<CarouselData[]>([]);
 
-  const initialSlide = (): number => {
-    if (data.length <= 0){
-      return 4
-    } else return data.length/2
-  }
+ 
   const sliderRef = useRef(null);
 
   const handlePrev = useCallback(() => {
@@ -63,16 +59,15 @@ export default function CarouselComponent() {
         keyboard={{
           enabled: true,
         }}
-        initialSlide={initialSlide()}
         modules={[Keyboard,EffectCoverflow, Pagination, Controller]}
-        className='w-full max-h-[850px] md:h-full md:w-full rounded-lg ' 
+        className='w-full max-h-[750px] md:h-full md:w-full rounded-lg ' 
       >
         {data.map((item) => (
-          <SwiperSlide className='w-full max-w-[1600px] px-3 h-full'  key={item.id}>
-            <img className='w-full h-full rounded-sm' src={item.image} />
+          <SwiperSlide className='w-full max-w-[1400px] px-3 h-full'  key={item.id}>
+            <img className='w-full object-cover h-full rounded-sm' src={item.image} />
           </SwiperSlide>
         ))} 
-        <div className='absolute h-full w-full z-[9000] pointer-events-none  max-w-[1600px] top-0 left-1/2 transform -translate-x-1/2  flex justify-between items-center '>
+        <div className='absolute h-full w-full z-[9000] pointer-events-none  max-w-[1400px] top-0 left-1/2 transform -translate-x-1/2  flex justify-between items-center '>
         
            <div className="ps-6 md:ps-10 z-[9999] pointer-events-auto lg:ps-20 swiper-button-prev" onClick={handlePrev} />
             <div className="pe-6 md:pe-10 z-[9999] pointer-events-auto lg:pe-20 swiper-button-next" onClick={handleNext} />

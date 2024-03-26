@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -7,9 +7,10 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import '@/assets/css/carouselStyle.css';
+import 'swiper/css/navigation';
 
 // import required modules
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { Controller, EffectCoverflow, Keyboard, Navigation, Pagination } from 'swiper/modules';
 
 import { useDataContext } from '@/context/data-context/DataContext';
 import { DataContextActionTypes } from '@/context/data-context/types';
@@ -28,31 +29,55 @@ export default function CarouselComponent() {
       return 4
     } else return data.length/2
   }
+  const sliderRef = useRef(null);
+
+  const handlePrev = useCallback(() => {
+    if (!sliderRef.current) return;
+    //@ts-ignore
+    sliderRef.current.swiper.slidePrev();
+  }, []);
+
+  const handleNext = useCallback(() => {
+    if (!sliderRef.current) return;
+    //@ts-ignore
+    sliderRef.current.swiper.slideNext();
+  }, []);
 
   const { setIsLoading, Component } = useLoader(
-    <div className='flex justify-center  mb-40'>
+    <div className='flex justify-center mb-10 md:mb-20 lg:mb-40 '>
       <Swiper
-        effect={'coverflow'}
-        grabCursor={true}
+        // effect={'coverflow'}
+        grabCursor={false}
         centeredSlides={true}
+        loop={true}
         slidesPerView={'auto'}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
-          depth: 700,
-          modifier: 1,
+          // depth: 100,
+         
           slideShadows: true,
         }}
+        ref={sliderRef}
         pagination={true}
+        keyboard={{
+          enabled: true,
+        }}
         initialSlide={initialSlide()}
-        modules={[EffectCoverflow, Pagination]}
-        className='w-[336px] h-[400px] md:h-full md:w-full rounded-lg' 
+        modules={[Keyboard,EffectCoverflow, Pagination, Controller]}
+        className='w-full max-h-[850px] md:h-full md:w-full rounded-lg ' 
       >
         {data.map((item) => (
-          <SwiperSlide  key={item.id}>
-            <img className='w-full h-full' src={item.image} />
+          <SwiperSlide className='w-full max-w-[1600px] px-3 h-full'  key={item.id}>
+            <img className='w-full h-full rounded-sm' src={item.image} />
           </SwiperSlide>
         ))} 
+        <div className='absolute h-full w-full z-[9000] pointer-events-none  max-w-[1600px] top-0 left-1/2 transform -translate-x-1/2  flex justify-between items-center '>
+        
+           <div className="ps-6 md:ps-10 z-[9999] pointer-events-auto lg:ps-20 swiper-button-prev" onClick={handlePrev} />
+            <div className="pe-6 md:pe-10 z-[9999] pointer-events-auto lg:pe-20 swiper-button-next" onClick={handleNext} />
+         
+        </div>
       </Swiper>
     </div>
   )

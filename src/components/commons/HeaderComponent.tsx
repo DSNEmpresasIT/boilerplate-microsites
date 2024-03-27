@@ -137,70 +137,55 @@ export default function HeaderComponent({ navClass, navJustify }: { navClass?: s
   //   return null;
   // };
 
+  
   return (
     <>
       <nav
-        className={` headerScroll  container fixed z-50  flex justify-between my-5  min-w-full mt-0   font-nunito  `}
+        className={` headerScroll container fixed z-50  flex justify-between my-5  min-w-full mt-0   font-nunito  `}
       >
         <div className="container flex justify-between my-5 ">
           {navClass === "nav-light" ? (
             <Link href="/" className="logo">
               <span className="inline-block dark:hidden">
-               {
-                (state.globalData.logoDark || state.globalData.logoLight)  && (
-                  <>
-                    <Image
-                      src={state.globalData.logoDark || ''}
-                      className="l-dark"
-                      height={24}
-                      width={138}
-                      alt=""
-                    />
-                    <Image
-                      src={state.globalData.logoLight || ''}
-                      className="l-light"
-                      height={24}
-                      width={138}
-                      alt=""
-                    />
-                  </>
-                )
-               }
+                <Image
+                  src={state.globalData.logoDark || ''}
+                  className="l-dark max-h-20 object-contain max-w-20"
+                  height={24}
+                  width={138}
+                  alt=""
+                />
+                <Image
+                  src={state.globalData.logoLight || ''}
+                  className="l-light max-h-20 object-contain max-w-20"
+                  height={24}
+                  width={138}
+                  alt=""
+                />
               </span>
-              {
-                (state.globalData.logoLight) && (
-                  <Image
-                    src={state.globalData.logoLight}
-                    height={24}
-                    width={138}
-                    className="hidden dark:inline-block"
-                    alt=""
-                  />
-                 )
-              }
+              <Image
+                src={state.globalData.logoLight || ''}
+                height={24}
+                width={138}
+                className="hidden dark:inline-block max-h-20 object-contain max-w-20"
+                alt=""
+              />
             </Link>
           ) : (
             <Link href="/" className="logo">
-              {
-                (state.globalData.logoDark || state.globalData.logoLight)  && (
-                  <>
-                    <Image
-                      src={state.globalData.logoDark || ''}
-                      height={24}
-                      width={138}
-                      className="inline-block dark:hidden"
-                      alt=""
-                    />
-                    <Image
-                      src={state.globalData.logoLight || ''}
-                      height={24}
-                      width={138}
-                      className="hidden dark:inline-block"
-                      alt=""
-                    />
-                  </>
-                )
-              }
+              <Image
+                src={state.globalData.logoLight || ''}
+                height={24}
+                width={138}
+                className="inline-block dark:hidden max-h-20 object-contain max-w-20 "
+                alt=""
+              />
+              <Image
+                src={state.globalData.logoLight || ''}
+                height={24}
+                width={138}
+                className="hidden dark:inline-block max-h-20 object-contain max-w-20"
+                alt=""
+              />
             </Link>
           )}
 
@@ -224,44 +209,18 @@ export default function HeaderComponent({ navClass, navJustify }: { navClass?: s
           {navClass !== "nav-light" ? (
             <ul className={`buy-button list-none space-x-1 mb-0`}>
               <li className="inline ps-1 mb-0">
-                <Link
-                  href="https://1.envato.market/techwind-next"
-                  target="_blank"
-                  className="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-full bg-indigo-600 hover:bg-indigo-700 border border-indigo-600 hover:border-indigo-700 text-white"
-                >
-                  <Icon.Twitter className="h-4 w-4" />
-                </Link>
-              </li>
-              <li className="inline ps-1 mb-0">
-                <Link
-                  href="https://1.envato.market/techwind-next"
-                  target="_blank"
-                  className="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-full bg-indigo-600 hover:bg-indigo-700 border border-indigo-600 hover:border-indigo-700 text-white"
-                >
-                  <Icon.MessageCircle className="h-4 w-4" />
-                </Link>
-              </li>
-              <li className="inline ps-1 mb-0">
-                <Link
-                  href="https://1.envato.market/techwind-next"
+                <a
+                  href="mailto:ventas@elbrillantesrl.com.ar"
+                  type="email"
                   target="_blank"
                   className="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-full bg-indigo-600 hover:bg-indigo-700 border border-indigo-600 hover:border-indigo-700 text-white"
                 >
                   <Icon.Mail className="h-4 w-4" />
-                </Link>
+                </a>
               </li>
               <li className="inline ps-1 mb-0">
                 <Link
-                  href="https://1.envato.market/techwind-next"
-                  target="_blank"
-                  className="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-full bg-indigo-600 hover:bg-indigo-700 border border-indigo-600 hover:border-indigo-700 text-white"
-                >
-                  <Icon.Instagram className="h-4 w-4" />
-                </Link>
-              </li>
-              <li className="inline ps-1 mb-0">
-                <Link
-                  href="https://1.envato.market/techwind-next"
+                  href="https://www.facebook.com/p/Frigorifico-El-Brillante-srl-100064008071575/"
                   target="_blank"
                   className="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-full bg-indigo-600 hover:bg-indigo-700 border border-indigo-600 hover:border-indigo-700 text-white"
                 >

@@ -13,6 +13,7 @@ export interface AboutComponent {
   description?: string;
   image_1?: string;
   image_2?: string;
+  image_3?: string;
 }
 
 export interface ContactComponent {
@@ -36,6 +37,7 @@ export interface GlobalData {
 export interface Webs {
   facebook?:string,
   instagram?: string,
+  email?: string,
   linkThree?: string,
   link1?: string,
   link2?: string,

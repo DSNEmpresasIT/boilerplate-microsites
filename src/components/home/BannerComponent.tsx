@@ -1,7 +1,6 @@
 "use client";
 import { useDataContext } from "@/context/data-context/DataContext";
 import { DataContextActionTypes } from "@/context/data-context/types";
-import { useBannerData } from "@/utils/hooks/dataHooks";
 import { useLoader } from "@/utils/hooks/useLoader";
 import { mockBannerData } from "@/utils/mock/mockData";
 import Image from "next/image";
@@ -30,7 +29,7 @@ const BannerComponent = () => {
               src={state.banner.data?.icon ?? "/images/logo-icon-64.png"}
               width={82}
               height={80}
-              className="block mx-auto animate-[spin_10s_linear_infinite]"
+              className="block mx-auto "
               alt=""
             />
             <h3 className="font-bold lg:leading-normal leading-normal text-4xl lg:text-5xl mb-5 mt-10 text-white">
@@ -39,6 +38,8 @@ const BannerComponent = () => {
             <p className="text-slate-300 text-lg max-w-2xl mx-auto">
               {state.banner.data?.description}
             </p>
+            <a download className="flex md:text-2xl  text-lg mx-auto text-white mt-2 hover:text-indigo-600 dark:hover:text-indigo-600" href={'/dowload/listaprecios.pdf'} >Descargue Lista de precios aquí<span className="ps-2"><svg  width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="square" ><path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 9l-5 5-5-5M12 12.8V2.5"></path></svg></span></a>
+
           </div>
         </div>
       </section>

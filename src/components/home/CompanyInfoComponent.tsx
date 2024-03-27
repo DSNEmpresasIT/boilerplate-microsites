@@ -13,7 +13,7 @@ import { useLoader } from "@/utils/hooks/useLoader";
 export default function CompanyInfoComponent() {
   const { state, dispatch } = useDataContext();
   const { setIsLoading, Component } = useLoader(
-    <div className="mb-10">
+    <div className="mb-16">
       <div className="container relative md:mt-24 mt-16">
         <div className=" pb-8 items-center">
           <div className="">

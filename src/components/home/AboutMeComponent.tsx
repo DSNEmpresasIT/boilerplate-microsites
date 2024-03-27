@@ -17,7 +17,7 @@ export const AboutMeComponent = () => {
           <div className="md:col-span-6">
             <div className="grid grid-cols-12 gap-4 items-center">
               <div className="col-span-7">
-                <div className="grid grid-cols-1 gap-4">
+                <div className="grid grid-cols-1 gap-4 " >
                   <Image
                     src={state.about.data.image_1 || ''}
                     width={0}
@@ -31,7 +31,7 @@ export const AboutMeComponent = () => {
               </div>
 
               <div className="col-span-5">
-                <div className="grid grid-cols-1 gap-4">
+                <div className="grid grid-cols-1 gap-4 ">
                   <Image
                     src={state.about.data.image_2 || ''}
                     width={0}
@@ -42,7 +42,17 @@ export const AboutMeComponent = () => {
                     alt=""
                   />
 
-                  <div className="w-28 transitionImage h-28 bg-indigo-600/10 rounded-lg"></div>
+                  <div className="w-28 transitionImage h-28 ">
+                  <Image
+                    src={state.about.data.image_3 || ''}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    style={{ width: "100%"}}
+                    className="shadow transitionImage max-h-40 rounded-lg"
+                    alt=""
+                  />
+                  </div>
                 </div>
               </div>
             </div>
@@ -60,7 +70,7 @@ export const AboutMeComponent = () => {
               <p className="text-slate-400 max-w-xl mb-6">
                 {state.about.data.description}
               </p>
-              <a download className="flex text-xl" href={'/dowload/listaprecios.pdf'} >Descargue Lista de precios aquí<span className="ps-2"><svg  width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="square" ><path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 9l-5 5-5-5M12 12.8V2.5"></path></svg></span></a>
+              {/* <a download className="flex text-xl" href={'/dowload/listaprecios.pdf'} >Descargue Lista de precios aquí<span className="ps-2"><svg  width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="square" ><path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 9l-5 5-5-5M12 12.8V2.5"></path></svg></span></a> */}
 
               <div className="flex mt-6">
                 <PiMapPinLight className="text-indigo-600 text-4xl me-4 mt-2" />

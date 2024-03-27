@@ -9,7 +9,6 @@ import { useDataContext } from "@/context/data-context/DataContext";
 import { DataContextActionTypes } from "@/context/data-context/types";
 import { mockGlobalData } from "@/utils/mock/mockData";
 
-
 export default function Index() {
   const { state, dispatch } = useDataContext();
 
